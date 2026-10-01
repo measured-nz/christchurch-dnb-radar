@@ -1,508 +1,307 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Christchurch D&B Radar</title>
+<style>
+  :root {
+    --bg: #08090c;
+    --card: #11141a;
+    --card-hover: #171b23;
+    --text: #f5f7fa;
+    --muted: #9299a6;
+    --border: #252b35;
 
-  <style>
-    :root {
-      --bg: #0b0b0d;
-      --card: #151519;
-      --card-2: #1b1b21;
-      --text: #f4f4f5;
-      --muted: #a5a5ad;
-      --accent: #ffffff;
-      --border: #292930;
-    }
+    --dnb: #00d9ff;
+    --bass: #b56cff;
+    --festival: #36e0a0;
+    --new: #ffcf4a;
+  }
 
-    * {
-      box-sizing: border-box;
-    }
+  * {
+    box-sizing: border-box;
+  }
 
-    html {
-      scroll-behavior: smooth;
-    }
+  html {
+    scroll-behavior: smooth;
+  }
 
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.45;
-    }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(circle at 85% 0%, rgba(0, 217, 255, 0.07), transparent 30%),
+      radial-gradient(circle at 10% 25%, rgba(181, 108, 255, 0.05), transparent 30%),
+      var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.45;
+  }
 
-    .wrap {
-      width: min(100% - 28px, 900px);
-      margin: 0 auto;
-    }
+  .wrap {
+    width: min(100% - 28px, 900px);
+    margin: 0 auto;
+  }
 
-    header {
-      padding: 28px 0 20px;
-    }
+  header {
+    padding: 30px 0 20px;
+  }
 
-    h1 {
-      margin: 0;
-      font-size: clamp(1.8rem, 7vw, 2.8rem);
-      letter-spacing: -0.04em;
-    }
+  h1 {
+    margin: 0;
+    font-size: clamp(1.8rem, 7vw, 2.8rem);
+    letter-spacing: -0.05em;
+  }
 
-    .subtitle {
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
+  .subtitle {
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
 
-    .filters {
-      display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      padding: 8px 0 18px;
-      scrollbar-width: none;
-    }
+  .filters {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 8px 0 20px;
+    scrollbar-width: none;
+  }
 
-    .filters::-webkit-scrollbar {
-      display: none;
-    }
+  .filters::-webkit-scrollbar {
+    display: none;
+  }
 
-    .filter {
-      flex: 0 0 auto;
-      border: 1px solid var(--border);
-      background: var(--card);
-      color: var(--muted);
-      border-radius: 999px;
-      padding: 9px 14px;
-      cursor: pointer;
-      font-size: 0.88rem;
-    }
+  .filter {
+    flex: 0 0 auto;
+    border: 1px solid var(--border);
+    background: rgba(17, 20, 26, 0.9);
+    color: var(--muted);
+    border-radius: 999px;
+    padding: 9px 14px;
+    cursor: pointer;
+    font-size: 0.88rem;
+    transition: 0.2s ease;
+  }
 
-    .filter.active {
-      background: var(--accent);
-      color: #000;
-      border-color: var(--accent);
-    }
+  .filter:hover {
+    border-color: #555d6b;
+    color: var(--text);
+  }
 
-    section {
-      margin: 20px 0 30px;
-    }
+  .filter.active {
+    background: #f5f7fa;
+    color: #08090c;
+    border-color: #f5f7fa;
+  }
 
-    .section-title {
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
+  section {
+    margin: 20px 0 30px;
+  }
 
+  .section-title {
+    font-size: 0.76rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--new);
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+
+  .new-grid {
+    display: grid;
+    gap: 10px;
+  }
+
+  .new-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 207, 74, 0.10),
+      rgba(17, 20, 26, 0.95) 55%
+    );
+    border: 1px solid rgba(255, 207, 74, 0.35);
+    border-left: 3px solid var(--new);
+    border-radius: 14px;
+    padding: 14px;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+  }
+
+  .new-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--new);
+  }
+
+  .new-card-date {
+    font-size: 0.72rem;
+    color: var(--new);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+  }
+
+  .new-card-name {
+    margin-top: 4px;
+    font-weight: 700;
+  }
+
+  .month {
+    margin-top: 38px;
+  }
+
+  .month-title {
+    font-size: 1.25rem;
+    margin: 0 0 12px;
+    letter-spacing: -0.02em;
+  }
+
+  .events {
+    display: grid;
+    gap: 12px;
+  }
+
+  .event {
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px;
+    scroll-margin-top: 20px;
+    overflow: hidden;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .event:hover {
+    background: var(--card-hover);
+    transform: translateY(-1px);
+  }
+
+  .event::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #444;
+  }
+
+  .event:has(.pill:nth-child(2))::before {
+    background: var(--dnb);
+  }
+
+  .event.highlight {
+    background: #1b2029;
+    border-color: var(--new);
+    box-shadow: 0 0 0 1px rgba(255, 207, 74, 0.15);
+  }
+
+  .event-top {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .date-box {
+    min-width: 54px;
+    text-align: center;
+    border-right: 1px solid var(--border);
+    padding-right: 12px;
+  }
+
+  .date-day {
+    font-size: 1.45rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .date-weekday {
+    margin-top: 5px;
+    font-size: 0.68rem;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .event-main {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .event-name {
+    font-size: 1.08rem;
+    font-weight: 750;
+    margin-bottom: 4px;
+  }
+
+  .artists {
+    color: #d9dde4;
+    font-size: 0.9rem;
+  }
+
+  .event-meta {
+    margin-top: 11px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .pill {
+    display: inline-block;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 4px 8px;
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+
+  .time {
+    margin-top: 10px;
+    color: var(--text);
+    font-size: 0.86rem;
+    font-weight: 700;
+  }
+
+  .badge {
+    display: inline-block;
+    margin-bottom: 9px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: var(--new);
+    color: #111;
+    font-size: 0.66rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .ticket {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 9px 14px;
+    border-radius: 9px;
+    background: var(--dnb);
+    color: #061014;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 800;
+    transition: 0.2s ease;
+  }
+
+  .ticket:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.08);
+  }
+
+  .empty {
+    color: var(--muted);
+    padding: 30px 0;
+  }
+
+  footer {
+    margin: 42px 0 28px;
+    color: #6f7682;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  @media (min-width: 650px) {
     .new-grid {
-      display: grid;
-      gap: 10px;
+      grid-template-columns: repeat(2, 1fr);
     }
-
-    .new-card {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 14px;
-      transition: transform 0.15s ease, border-color 0.15s ease;
-    }
-
-    .new-card:hover {
-      transform: translateY(-1px);
-      border-color: #55555f;
-    }
-
-    .new-card-date {
-      font-size: 0.76rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .new-card-name {
-      margin-top: 3px;
-      font-weight: 700;
-    }
-
-    .month {
-      margin-top: 34px;
-    }
-
-    .month-title {
-      font-size: 1.25rem;
-      margin: 0 0 12px;
-      letter-spacing: -0.02em;
-    }
-
-    .events {
-      display: grid;
-      gap: 12px;
-    }
-
-    .event {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 16px;
-      scroll-margin-top: 20px;
-      transition: background 0.3s ease, border-color 0.3s ease;
-    }
-
-    .event.highlight {
-      background: var(--card-2);
-      border-color: #777783;
-    }
-
-    .event-top {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-    }
-
-    .date-box {
-      min-width: 54px;
-      text-align: center;
-      border-right: 1px solid var(--border);
-      padding-right: 12px;
-    }
-
-    .date-day {
-      font-size: 1.35rem;
-      font-weight: 700;
-      line-height: 1;
-    }
-
-    .date-weekday {
-      margin-top: 4px;
-      font-size: 0.7rem;
-      color: var(--muted);
-      text-transform: uppercase;
-    }
-
-    .event-main {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .event-name {
-      font-size: 1.08rem;
-      font-weight: 700;
-      margin-bottom: 3px;
-    }
-
-    .artists {
-      color: #d5d5da;
-      font-size: 0.9rem;
-    }
-
-    .event-meta {
-      margin-top: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .pill {
-      display: inline-block;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 4px 8px;
-      font-size: 0.72rem;
-      color: var(--muted);
-    }
-
-    .time {
-      margin-top: 9px;
-      font-size: 0.86rem;
-      color: #e6e6e9;
-    }
-
-    .badge {
-      display: inline-block;
-      margin-bottom: 8px;
-      padding: 4px 7px;
-      border-radius: 6px;
-      background: #fff;
-      color: #000;
-      font-size: 0.68rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .ticket {
-      display: inline-block;
-      margin-top: 13px;
-      padding: 9px 13px;
-      border-radius: 9px;
-      background: #fff;
-      color: #000;
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 700;
-    }
-
-    .ticket:hover {
-      opacity: 0.85;
-    }
-
-    .empty {
-      color: var(--muted);
-      padding: 30px 0;
-    }
-
-    footer {
-      margin: 42px 0 28px;
-      color: #777780;
-      font-size: 0.75rem;
-      text-align: center;
-    }
-
-    @media (min-width: 650px) {
-      .new-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <div class="wrap">
-    <header>
-      <h1>Christchurch D&B Radar</h1>
-      <div class="subtitle">
-        Drum & Bass, bass-adjacent events & selected festivals
-      </div>
-    </header>
-
-    <div class="filters">
-      <button class="filter active" data-filter="all">All</button>
-      <button class="filter" data-filter="dnb">🔥 D&B</button>
-      <button class="filter" data-filter="bass">🔊 Bass / adjacent</button>
-      <button class="filter" data-filter="festival">🌊 Festivals</button>
-    </div>
-
-    <section id="new-section">
-      <div class="section-title">New / changed this week</div>
-      <div id="new-grid" class="new-grid"></div>
-    </section>
-
-    <main id="months"></main>
-
-    <footer id="footer"></footer>
-  </div>
-
-  <script>
-    let data = null;
-    let currentFilter = "all";
-
-    function formatDate(dateString) {
-      const date = new Date(dateString + "T00:00:00");
-      return {
-        day: date.getDate(),
-        weekday: date.toLocaleDateString("en-NZ", { weekday: "short" }),
-        month: date.toLocaleDateString("en-NZ", { month: "long" }),
-        year: date.getFullYear()
-      };
-    }
-
-    function eventId(event) {
-      return (
-        "event-" +
-        event.date +
-        "-" +
-        event.name
-          .toLowerCase()
-          .replace(/[^a-z0-9]+/g, "-")
-          .replace(/^-|-$/g, "")
-      );
-    }
-
-    function categoryLabel(category) {
-      if (category === "dnb") return "D&B";
-      if (category === "bass") return "Bass / adjacent";
-      if (category === "festival") return "Festival";
-      return category;
-    }
-
-    function visibleEvents() {
-      return data.events
-        .filter(event => currentFilter === "all" || event.category === currentFilter)
-        .filter(event => event.date >= data.last_checked)
-        .sort((a, b) => a.date.localeCompare(b.date));
-    }
-
-    function renderNew() {
-      const grid = document.getElementById("new-grid");
-      const newEvents = visibleEvents().filter(event => event.new_this_week);
-
-      grid.innerHTML = "";
-
-      if (!newEvents.length) {
-        document.getElementById("new-section").style.display = "none";
-        return;
-      }
-
-      document.getElementById("new-section").style.display = "";
-
-      newEvents.forEach(event => {
-        const d = formatDate(event.date);
-
-        const card = document.createElement("a");
-        card.className = "new-card";
-        card.href = "#" + eventId(event);
-
-        card.innerHTML = `
-          <div class="new-card-date">${d.weekday} ${d.day} ${d.month}</div>
-          <div class="new-card-name">${event.name}</div>
-        `;
-
-        grid.appendChild(card);
-      });
-    }
-
-    function renderEvents() {
-      const months = document.getElementById("months");
-      months.innerHTML = "";
-
-      const events = visibleEvents();
-
-      if (!events.length) {
-        months.innerHTML = '<div class="empty">No upcoming events match this filter.</div>';
-        return;
-      }
-
-      const grouped = {};
-
-      events.forEach(event => {
-        const d = formatDate(event.date);
-        const key = `${d.year}-${String(new Date(event.date + "T00:00:00").getMonth() + 1).padStart(2, "0")}`;
-
-        if (!grouped[key]) {
-          grouped[key] = {
-            label: `${d.month.toUpperCase()} ${d.year}`,
-            events: []
-          };
-        }
-
-        grouped[key].events.push(event);
-      });
-
-      Object.keys(grouped)
-        .sort()
-        .forEach(key => {
-          const group = grouped[key];
-
-          const section = document.createElement("section");
-          section.className = "month";
-
-          section.innerHTML = `
-            <h2 class="month-title">${group.label}</h2>
-            <div class="events"></div>
-          `;
-
-          const eventContainer = section.querySelector(".events");
-
-          group.events.forEach(event => {
-            const d = formatDate(event.date);
-
-            const article = document.createElement("article");
-            article.className = "event";
-            article.id = eventId(event);
-
-            article.innerHTML = `
-              ${event.new_this_week ? '<div class="badge">New / changed</div>' : ""}
-
-              <div class="event-top">
-                <div class="date-box">
-                  <div class="date-day">${d.day}</div>
-                  <div class="date-weekday">${d.weekday}</div>
-                </div>
-
-                <div class="event-main">
-                  <div class="event-name">${event.name}</div>
-                  <div class="artists">${event.artists}</div>
-
-                  <div class="event-meta">
-                    <span class="pill">${event.venue}</span>
-                    <span class="pill">${categoryLabel(event.category)}</span>
-                  </div>
-
-                  ${
-                    event.time && event.time !== "—"
-                      ? `<div class="time">🕒 ${event.time}</div>`
-                      : ""
-                  }
-
-                  ${
-                    event.ticket_url
-                      ? `<a class="ticket" href="${event.ticket_url}" target="_blank" rel="noopener noreferrer">${event.ticket_label || "Tickets"}</a>`
-                      : ""
-                  }
-                </div>
-              </div>
-            `;
-
-            eventContainer.appendChild(article);
-          });
-
-          months.appendChild(section);
-        });
-    }
-
-    function renderFooter() {
-      document.getElementById("footer").textContent =
-        `Last checked ${data.last_checked}. Event information is verified against available promoter, venue and ticketing sources.`;
-    }
-
-    function render() {
-      renderNew();
-      renderEvents();
-      renderFooter();
-    }
-
-    document.querySelectorAll(".filter").forEach(button => {
-      button.addEventListener("click", () => {
-        document.querySelectorAll(".filter").forEach(b => b.classList.remove("active"));
-        button.classList.add("active");
-
-        currentFilter = button.dataset.filter;
-        render();
-      });
-    });
-
-    fetch("events.json")
-      .then(response => response.json())
-      .then(json => {
-        data = json;
-        render();
-      })
-      .catch(error => {
-        console.error(error);
-        document.getElementById("months").innerHTML =
-          '<div class="empty">Unable to load event data.</div>';
-      });
-
-    document.addEventListener("click", event => {
-      const link = event.target.closest(".new-card");
-
-      if (!link) return;
-
-      setTimeout(() => {
-        const target = document.querySelector(link.hash);
-
-        if (target) {
-          target.classList.add("highlight");
-
-          setTimeout(() => {
-            target.classList.remove("highlight");
-          }, 1800);
-        }
-      }, 100);
-    });
-  </script>
-</body>
-</html>
+  }
+</style>
