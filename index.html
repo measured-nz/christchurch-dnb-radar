@@ -23,13 +23,16 @@ h1{font-size:clamp(2rem,7vw,3.4rem);line-height:1;margin:0 0 9px;letter-spacing:
 .section-label{font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);font-weight:800;margin:0 0 11px}
 .new-section{margin-bottom:30px}
 .new-grid{display:grid;gap:10px}
-.new-card{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;padding:12px 14px}
+.new-card{display:block;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;padding:12px 14px;color:var(--text);text-decoration:none;transition:border-color .2s,transform .2s,background .2s}
+.new-card:hover{border-color:var(--accent);transform:translateY(-1px)}
+.new-card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .new-card strong{display:block}
 .new-meta{font-size:.86rem;color:var(--muted);margin-top:3px}
 .month{margin-top:30px}
 .month-heading{font-size:1.35rem;letter-spacing:.04em;text-transform:uppercase;margin:0 0 12px;padding-bottom:9px;border-bottom:1px solid var(--line)}
 .events{display:grid;gap:11px}
-.event{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px}
+.event{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;scroll-margin-top:18px;transition:border-color .35s,box-shadow .35s}
+.event.jump-highlight{border-color:var(--accent);box-shadow:0 0 0 3px rgba(245,197,66,.16)}
 .event-top{display:flex;gap:12px;align-items:flex-start}
 .date{min-width:55px;text-align:center;border-right:1px solid var(--line);padding-right:12px}
 .day{font-size:1.45rem;font-weight:850;line-height:1}
@@ -94,13 +97,18 @@ function categoryLabel(category){
   return category === 'dnb' ? 'D&B' : category === 'bass' ? 'Bass / adjacent' : 'Festival';
 }
 
+function eventId(e){
+  return 'event-' + e.date + '-' + e.name.toLowerCase()
+    .replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+}
+
 function eventCard(e){
   const d = eventDate(e);
   const ticket = e.ticket_url
     ? `<div class="actions"><a class="ticket" href="${e.ticket_url}" target="_blank" rel="noopener">${e.ticket_label || 'Tickets'}</a></div>`
     : '';
   return `
-    <article class="event">
+    <article class="event" id="${eventId(e)}">
       <div class="event-top">
         <div class="date">
           <div class="day">${dayFormatter.format(d)}</div>
@@ -136,10 +144,10 @@ function render(){
   const newGrid = document.getElementById('newGrid');
   newSection.hidden = newEvents.length === 0;
   newGrid.innerHTML = newEvents.map(e => `
-    <div class="new-card">
+    <a class="new-card" href="#${eventId(e)}" data-event-link="${eventId(e)}">
       <strong>${e.name}</strong>
       <div class="new-meta">${dayFormatter.format(eventDate(e))} · ${e.venue || ''}</div>
-    </div>`).join('');
+    </a>`).join('');
 
   const calendar = document.getElementById('calendar');
   const empty = document.getElementById('empty');
@@ -176,6 +184,20 @@ async function load(){
     document.getElementById('empty').hidden = false;
   }
 }
+
+document.addEventListener('click', (event) => {
+  const link = event.target.closest('[data-event-link]');
+  if(!link) return;
+  const target = document.getElementById(link.dataset.eventLink);
+  if(!target) return;
+  event.preventDefault();
+  history.replaceState(null, '', '#' + link.dataset.eventLink);
+  target.scrollIntoView({behavior:'smooth', block:'center'});
+  target.classList.remove('jump-highlight');
+  void target.offsetWidth;
+  target.classList.add('jump-highlight');
+  setTimeout(() => target.classList.remove('jump-highlight'), 1800);
+});
 
 document.querySelectorAll('.filter').forEach(button=>{
   button.addEventListener('click',()=>{
