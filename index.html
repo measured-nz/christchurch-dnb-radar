@@ -1,34 +1,192 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Christchurch D&B Radar</title>
+<meta name="description" content="Upcoming Christchurch drum & bass, bass and festival events.">
 <style>
-:root{--bg:#0b0d10;--card:#141820;--text:#f4f6f8;--muted:#aab2bd;--accent:#b7ff3c;--line:#272d36}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-.wrap{max-width:900px;margin:auto;padding:28px 18px 60px}.hero{padding:24px 0 20px}.eyebrow{color:var(--accent);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem}
-h1{font-size:clamp(2.1rem,7vw,4.5rem);line-height:.95;margin:10px 0}.sub{color:var(--muted);max-width:650px}.updated{font-size:.85rem;color:var(--muted);margin-top:16px}
-nav{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 30px}nav a{color:var(--text);text-decoration:none;border:1px solid var(--line);padding:8px 12px;border-radius:999px}
-section{margin:32px 0}h2{font-size:1.35rem;margin-bottom:14px}.event{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:17px;margin:10px 0}.date{color:var(--accent);font-weight:800;font-size:.9rem}.event h3{margin:4px 0;font-size:1.18rem}.meta{color:var(--muted);font-size:.92rem}.artists{margin:8px 0}.ticket{display:inline-block;margin-top:10px;background:var(--accent);color:#0b0d10;text-decoration:none;font-weight:800;padding:8px 12px;border-radius:9px}.tag{display:inline-block;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:2px 7px;font-size:.72rem;margin-left:5px}footer{border-top:1px solid var(--line);margin-top:50px;padding-top:20px;color:var(--muted);font-size:.85rem}
-</style></head><body><main class="wrap">
-<header class="hero"><div class="eyebrow">Christchurch • New Zealand</div><h1>D&B Radar</h1><p class="sub">Upcoming drum & bass, bass and related events — checked regularly and arranged from soonest to latest.</p><div class="updated">First published: October 2026 · Event details can change; check the ticket/promoter page before heading out.</div></header>
-<nav><a href="#dnb">🔥 D&B</a><a href="#bass">🔊 Bass / adjacent</a><a href="#festivals">🌊 Festivals</a></nav>
-<section id="dnb"><h2>🔥 Drum & Bass</h2>
-<div class="event"><div class="date">FRI 2 OCT 2026</div><h3>DnB Allstars</h3><div class="meta">Wolfbrook Arena</div><div class="artists">Kanine · Camo & Krooked · Born On Road · A-Z · Crossy · Disrupta · OKO</div><a class="ticket" href="https://www.moshtix.co.nz/" target="_blank">Tickets ↗</a></div>
-<div class="event"><div class="date">FRI 9 OCT 2026</div><h3>Hospital30</h3><div class="meta">Sydenham Underpass</div><div class="artists">Danny Byrd · Unglued · HOAX</div><a class="ticket" href="https://www.humanitix.com/" target="_blank">Tickets ↗</a></div>
-<div class="event"><div class="date">SAT 10 OCT 2026</div><h3>The Upbeats All Night</h3><div class="meta">The Assembly</div><div class="artists">The Upbeats</div><a class="ticket" href="#" onclick="return false">Ticket link to verify</a></div>
-<div class="event"><div class="date">SAT 17 OCT 2026</div><h3>goddard.</h3><div class="meta">The Assembly</div><div class="artists">goddard.</div><a class="ticket" href="#" onclick="return false">Ticket link to verify</a></div>
-<div class="event"><div class="date">SAT 24 OCT 2026</div><h3>Evilbrewe 3: DNB Domination & Skate Sesh</h3><div class="meta">Evil Genius</div><div class="artists">Seddy · Little Bird · Bambi · Willy B · Domas · J Howler · Lozz · Tekmatik · The Host From The Coast · Captain Johnny</div></div>
-<div class="event"><div class="date">FRI 6 NOV 2026</div><h3>Turno</h3><div class="meta">The Assembly</div><div class="artists">Turno (UK) · jump-up D&B</div><a class="ticket" href="#" onclick="return false">Ticket link to verify</a></div>
-<div class="event"><div class="date">FRI 20 NOV 2026</div><h3>My Home Is The Rave</h3><div class="meta">Wolfbrook Arena</div><div class="artists">Hedex & Eksman · Mozey · Simula · Amplify · Nersha · Damage Control</div><a class="ticket" href="#" onclick="return false">Ticket link to verify</a></div>
+:root{
+  --bg:#0b0d10;--panel:#13171c;--panel2:#181d23;--text:#f4f6f8;--muted:#9aa4af;
+  --line:#28303a;--accent:#f5c542;--accent2:#70d6ff;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}
+main{max-width:900px;margin:auto;padding:28px 16px 48px}
+header{padding:10px 0 22px}
+h1{font-size:clamp(2rem,7vw,3.4rem);line-height:1;margin:0 0 9px;letter-spacing:-.04em}
+.subtitle{color:var(--muted);margin:0;max-width:680px}
+.checked{font-size:.82rem;color:var(--muted);margin-top:10px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 28px}
+.filter{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:999px;padding:8px 13px;font:inherit;cursor:pointer}
+.filter.active{background:var(--text);color:var(--bg);border-color:var(--text)}
+.section-label{font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);font-weight:800;margin:0 0 11px}
+.new-section{margin-bottom:30px}
+.new-grid{display:grid;gap:10px}
+.new-card{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;padding:12px 14px}
+.new-card strong{display:block}
+.new-meta{font-size:.86rem;color:var(--muted);margin-top:3px}
+.month{margin-top:30px}
+.month-heading{font-size:1.35rem;letter-spacing:.04em;text-transform:uppercase;margin:0 0 12px;padding-bottom:9px;border-bottom:1px solid var(--line)}
+.events{display:grid;gap:11px}
+.event{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px}
+.event-top{display:flex;gap:12px;align-items:flex-start}
+.date{min-width:55px;text-align:center;border-right:1px solid var(--line);padding-right:12px}
+.day{font-size:1.45rem;font-weight:850;line-height:1}
+.dow{font-size:.7rem;color:var(--muted);text-transform:uppercase;margin-top:4px}
+.info{min-width:0;flex:1}
+.name{font-size:1.05rem;font-weight:800;margin:0}
+.artists{color:#d7dce2;margin-top:3px;font-size:.92rem}
+.venue{color:var(--muted);font-size:.84rem;margin-top:4px}
+.badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
+.badge{font-size:.7rem;padding:3px 7px;border-radius:999px;background:var(--panel2);border:1px solid var(--line);color:var(--muted)}
+.badge.new{color:var(--bg);background:var(--accent);border-color:var(--accent);font-weight:800}
+.actions{margin-top:11px}
+.ticket{display:inline-block;text-decoration:none;color:var(--bg);background:var(--text);border-radius:8px;padding:7px 10px;font-size:.8rem;font-weight:750}
+.empty{color:var(--muted);padding:20px 0}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-size:.76rem;color:var(--muted)}
+@media(min-width:650px){
+  .new-grid{grid-template-columns:repeat(2,1fr)}
+  .event{padding:16px}
+}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1>Christchurch D&B Radar</h1>
+  <p class="subtitle">Upcoming drum & bass, bass and selected festival events around Christchurch.</p>
+  <div class="checked" id="checked">Checking latest update…</div>
+</header>
+
+<section class="new-section" id="newSection" hidden>
+  <p class="section-label">🆕 New / changed this week</p>
+  <div class="new-grid" id="newGrid"></div>
 </section>
-<section id="bass"><h2>🔊 Bass / D&B adjacent</h2>
-<div class="event"><div class="date">SAT 3 OCT 2026</div><h3>Brainless x Euphonic</h3><div class="meta">Sydenham Underpass</div><div class="artists">Le Butin · Mr Meaty Boy · Emilie · Frog · Boom Candy · Saber Lights</div></div>
-<div class="event"><div class="date">SAT 10 OCT 2026</div><h3>EctoSpasm</h3><div class="meta">Sydenham Underpass</div><div class="artists">Grommie + supports · D&B / dubstep / UKG</div></div>
-<div class="event"><div class="date">SAT 17 OCT 2026</div><h3>City Doof</h3><div class="meta">Sydenham Underpass</div><div class="artists">Optimus Gryme · Mish & Greeen · Indecisive · Bulla · Neutze</div></div>
-<div class="event"><div class="date">SAT 24 OCT 2026</div><h3>VIBEZ</h3><div class="meta">Galaxy Bar</div><div class="artists">J Howler · Rasty · Creamie · Fulla · Chetty D · liquid / rollers / jungle / 140s</div></div>
-<div class="event"><div class="date">SAT 31 OCT 2026</div><h3>Monster Mash</h3><div class="meta">Sydenham Underpass</div><div class="artists">Paige Julia (3-hour set) · 190E · Cetra · Dargie · Delicious · Emeryx · Export · Kinect · Low Def · Murkz · Serranz + wildcard</div></div>
-</section>
-<section id="festivals"><h2>🌊 Festivals</h2>
-<div class="event"><div class="date">MON 28 DEC 2026</div><h3>Lakes Festival</h3><div class="meta">North Hagley Park</div><div class="artists">Broader festival including Netsky · Break · Oppidan · Lens · DJ Zinc and others</div></div>
-</section>
-<footer>Christchurch D&B Radar · Community event guide. Verify event details with the promoter/ticket seller before travelling.</footer>
-</main></body></html>
+
+<div class="filters" aria-label="Genre filters">
+  <button class="filter active" data-filter="all">All</button>
+  <button class="filter" data-filter="dnb">🔥 D&amp;B</button>
+  <button class="filter" data-filter="bass">🔊 Bass / adjacent</button>
+  <button class="filter" data-filter="festival">🌊 Festivals</button>
+</div>
+
+<section id="calendar"></section>
+<div class="empty" id="empty" hidden>No upcoming events match this filter.</div>
+
+<footer>
+  Events are grouped by month and sorted chronologically. Past events disappear automatically.
+  Event details and ticket links should be verified against the linked promoter/ticketing source before relying on them.
+</footer>
+</main>
+
+<script>
+const monthFormatter = new Intl.DateTimeFormat('en-NZ',{month:'long',year:'numeric'});
+const weekdayFormatter = new Intl.DateTimeFormat('en-NZ',{weekday:'short'});
+const dayFormatter = new Intl.DateTimeFormat('en-NZ',{day:'2-digit'});
+
+let data = null;
+let activeFilter = 'all';
+
+function eventDate(e){ return new Date(e.date + 'T00:00:00'); }
+
+function categoryLabel(category){
+  return category === 'dnb' ? 'D&B' : category === 'bass' ? 'Bass / adjacent' : 'Festival';
+}
+
+function eventCard(e){
+  const d = eventDate(e);
+  const ticket = e.ticket_url
+    ? `<div class="actions"><a class="ticket" href="${e.ticket_url}" target="_blank" rel="noopener">${e.ticket_label || 'Tickets'}</a></div>`
+    : '';
+  return `
+    <article class="event">
+      <div class="event-top">
+        <div class="date">
+          <div class="day">${dayFormatter.format(d)}</div>
+          <div class="dow">${weekdayFormatter.format(d)}</div>
+        </div>
+        <div class="info">
+          <p class="name">${e.name}</p>
+          <div class="artists">${e.artists || ''}</div>
+          <div class="venue">${e.venue || ''}</div>
+          <div class="badges">
+            <span class="badge">${categoryLabel(e.category)}</span>
+            ${e.new_this_week ? '<span class="badge new">NEW / CHANGED</span>' : ''}
+          </div>
+          ${ticket}
+        </div>
+      </div>
+    </article>`;
+}
+
+function render(){
+  const cutoff = new Date(data.last_checked + 'T00:00:00');
+  const filtered = data.events
+    .filter(e => eventDate(e) >= cutoff)
+    .filter(e => activeFilter === 'all' || e.category === activeFilter)
+    .sort((a,b) => eventDate(a) - eventDate(b));
+
+  const newEvents = data.events
+    .filter(e => e.new_this_week)
+    .filter(e => activeFilter === 'all' || e.category === activeFilter)
+    .sort((a,b) => eventDate(a) - eventDate(b));
+
+  const newSection = document.getElementById('newSection');
+  const newGrid = document.getElementById('newGrid');
+  newSection.hidden = newEvents.length === 0;
+  newGrid.innerHTML = newEvents.map(e => `
+    <div class="new-card">
+      <strong>${e.name}</strong>
+      <div class="new-meta">${dayFormatter.format(eventDate(e))} · ${e.venue || ''}</div>
+    </div>`).join('');
+
+  const calendar = document.getElementById('calendar');
+  const empty = document.getElementById('empty');
+  calendar.innerHTML = '';
+
+  const groups = {};
+  for(const e of filtered){
+    const key = e.date.slice(0,7);
+    (groups[key] ||= []).push(e);
+  }
+
+  const keys = Object.keys(groups).sort();
+  empty.hidden = keys.length > 0;
+
+  for(const key of keys){
+    const section = document.createElement('section');
+    section.className = 'month';
+    const headingDate = new Date(key + '-01T00:00:00');
+    section.innerHTML = `<h2 class="month-heading">${monthFormatter.format(headingDate)}</h2>
+      <div class="events">${groups[key].map(eventCard).join('')}</div>`;
+    calendar.appendChild(section);
+  }
+}
+
+async function load(){
+  try{
+    const response = await fetch('events.json', {cache:'no-store'});
+    if(!response.ok) throw new Error('events.json could not be loaded');
+    data = await response.json();
+    document.getElementById('checked').textContent = `Last checked: ${data.last_checked}`;
+    render();
+  }catch(err){
+    document.getElementById('checked').textContent = 'Unable to load the event data right now.';
+    document.getElementById('empty').hidden = false;
+  }
+}
+
+document.querySelectorAll('.filter').forEach(button=>{
+  button.addEventListener('click',()=>{
+    document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
+    button.classList.add('active');
+    activeFilter = button.dataset.filter;
+    if(data) render();
+  });
+});
+
+load();
+</script>
+</body>
+</html>
