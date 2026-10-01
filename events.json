@@ -1,0 +1,135 @@
+{
+  "last_checked": "2026-10-01",
+  "events": [
+    {
+      "date": "2026-10-02",
+      "name": "DnB Allstars",
+      "venue": "Wolfbrook Arena",
+      "category": "dnb",
+      "artists": "Kanine · Camo & Krooked · Born On Road · A-Z · Crossy · Disrupta · OKO",
+      "ticket_url": "https://www.moshtix.co.nz/",
+      "ticket_label": "Moshtix",
+      "new_this_week": true
+    },
+    {
+      "date": "2026-10-03",
+      "name": "Brainless x Euphonic",
+      "venue": "Sydenham Underpass",
+      "category": "bass",
+      "artists": "Le Butin · Mr Meaty Boy · Emilie · Frog · Boom Candy · Saber Lights",
+      "ticket_url": "",
+      "ticket_label": "Humanitix",
+      "new_this_week": true
+    },
+    {
+      "date": "2026-10-09",
+      "name": "Hospital30",
+      "venue": "Sydenham Underpass",
+      "category": "dnb",
+      "artists": "Danny Byrd · Unglued · HOAX",
+      "ticket_url": "https://www.humanitix.com/",
+      "ticket_label": "Humanitix",
+      "new_this_week": true
+    },
+    {
+      "date": "2026-10-10",
+      "name": "The Upbeats All Night",
+      "venue": "The Assembly",
+      "category": "dnb",
+      "artists": "The Upbeats",
+      "ticket_url": "",
+      "ticket_label": "",
+      "new_this_week": true
+    },
+    {
+      "date": "2026-10-10",
+      "name": "EctoSpasm",
+      "venue": "Sydenham Underpass",
+      "category": "bass",
+      "artists": "Grommie + supports · D&B / dubstep / UKG",
+      "ticket_url": "",
+      "ticket_label": "",
+      "new_this_week": true
+    },
+    {
+      "date": "2026-10-17",
+      "name": "goddard.",
+      "venue": "The Assembly",
+      "category": "dnb",
+      "artists": "goddard.",
+      "ticket_url": "",
+      "ticket_label": "",
+      "new_this_week": true
+    },
+    {
+      "date": "2026-10-17",
+      "name": "City Doof",
+      "venue": "Sydenham Underpass",
+      "category": "bass",
+      "artists": "Optimus Gryme · Mish & Greeen · Indecisive · Bulla · Neutze",
+      "ticket_url": "",
+      "ticket_label": "",
+      "new_this_week": true
+    },
+    {
+      "date": "2026-10-24",
+      "name": "Evilbrewe 3: DNB Domination & Skate Sesh",
+      "venue": "Evil Genius",
+      "category": "dnb",
+      "artists": "Seddy · Little Bird · Bambi · Willy B · Domas · J Howler · Lozz · Tekmatik · The Host From The Coast · Captain Johnny",
+      "ticket_url": "",
+      "ticket_label": "",
+      "new_this_week": true
+    },
+    {
+      "date": "2026-10-24",
+      "name": "VIBEZ",
+      "venue": "Galaxy Bar",
+      "category": "bass",
+      "artists": "J Howler · Rasty · Creamie · Fulla · Chetty D · liquid / rollers / jungle / 140s",
+      "ticket_url": "",
+      "ticket_label": "",
+      "new_this_week": true
+    },
+    {
+      "date": "2026-10-31",
+      "name": "Monster Mash",
+      "venue": "Sydenham Underpass",
+      "category": "bass",
+      "artists": "Paige Julia (3-hour set) · 190E · Cetra · Dargie · Delicious · Emeryx · Export · Kinect · Low Def · Murkz · Serranz + wildcard",
+      "ticket_url": "",
+      "ticket_label": "",
+      "new_this_week": true
+    },
+    {
+      "date": "2026-11-06",
+      "name": "Turno",
+      "venue": "The Assembly",
+      "category": "dnb",
+      "artists": "Turno (UK) · jump-up D&B",
+      "ticket_url": "",
+      "ticket_label": "",
+      "new_this_week": true
+    },
+    {
+      "date": "2026-11-20",
+      "name": "My Home Is The Rave",
+      "venue": "Wolfbrook Arena",
+      "category": "dnb",
+      "artists": "Hedex & Eksman · Mozey · Simula · Amplify · Nersha · Damage Control",
+      "ticket_url": "",
+      "ticket_label": "",
+      "new_this_week": true
+    },
+    {
+      "date": "2026-12-28",
+      "name": "Lakes Festival",
+      "venue": "North Hagley Park",
+      "category": "festival",
+      "artists": "Broader festival including Netsky · Break · Oppidan · Lens · DJ Zinc and others",
+      "ticket_url": "",
+      "ticket_label": "",
+      "new_this_week": true
+    }
+  ]
+}
