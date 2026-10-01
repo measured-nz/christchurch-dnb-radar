@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christchurch D&B Radar</title>
+
 <style>
   :root {
     --bg: #08090c;
@@ -305,3 +312,242 @@
     }
   }
 </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Christchurch D&B Radar</h1>
+      <div class="subtitle">
+        Drum & Bass, bass-adjacent events & selected festivals
+      </div>
+    </header>
+
+    <div class="filters">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="dnb">🔥 D&B</button>
+      <button class="filter" data-filter="bass">🔊 Bass / adjacent</button>
+      <button class="filter" data-filter="festival">🌊 Festivals</button>
+    </div>
+
+    <section id="new-section">
+      <div class="section-title">New / changed this week</div>
+      <div id="new-grid" class="new-grid"></div>
+    </section>
+
+    <main id="months"></main>
+
+    <footer id="footer"></footer>
+  </div>
+
+  <script>
+    let data = null;
+    let currentFilter = "all";
+
+    function formatDate(dateString) {
+      const date = new Date(dateString + "T00:00:00");
+      return {
+        day: date.getDate(),
+        weekday: date.toLocaleDateString("en-NZ", { weekday: "short" }),
+        month: date.toLocaleDateString("en-NZ", { month: "long" }),
+        year: date.getFullYear()
+      };
+    }
+
+    function eventId(event) {
+      return (
+        "event-" +
+        event.date +
+        "-" +
+        event.name
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-|-$/g, "")
+      );
+    }
+
+    function categoryLabel(category) {
+      if (category === "dnb") return "D&B";
+      if (category === "bass") return "Bass / adjacent";
+      if (category === "festival") return "Festival";
+      return category;
+    }
+
+    function visibleEvents() {
+      return data.events
+        .filter(event => currentFilter === "all" || event.category === currentFilter)
+        .filter(event => event.date >= data.last_checked)
+        .sort((a, b) => a.date.localeCompare(b.date));
+    }
+
+    function renderNew() {
+      const grid = document.getElementById("new-grid");
+      const newEvents = visibleEvents().filter(event => event.new_this_week);
+
+      grid.innerHTML = "";
+
+      if (!newEvents.length) {
+        document.getElementById("new-section").style.display = "none";
+        return;
+      }
+
+      document.getElementById("new-section").style.display = "";
+
+      newEvents.forEach(event => {
+        const d = formatDate(event.date);
+
+        const card = document.createElement("a");
+        card.className = "new-card";
+        card.href = "#" + eventId(event);
+
+        card.innerHTML = `
+          <div class="new-card-date">${d.weekday} ${d.day} ${d.month}</div>
+          <div class="new-card-name">${event.name}</div>
+        `;
+
+        grid.appendChild(card);
+      });
+    }
+
+    function renderEvents() {
+      const months = document.getElementById("months");
+      months.innerHTML = "";
+
+      const events = visibleEvents();
+
+      if (!events.length) {
+        months.innerHTML = '<div class="empty">No upcoming events match this filter.</div>';
+        return;
+      }
+
+      const grouped = {};
+
+      events.forEach(event => {
+        const d = formatDate(event.date);
+        const key = `${d.year}-${String(new Date(event.date + "T00:00:00").getMonth() + 1).padStart(2, "0")}`;
+
+        if (!grouped[key]) {
+          grouped[key] = {
+            label: `${d.month.toUpperCase()} ${d.year}`,
+            events: []
+          };
+        }
+
+        grouped[key].events.push(event);
+      });
+
+      Object.keys(grouped)
+        .sort()
+        .forEach(key => {
+          const group = grouped[key];
+
+          const section = document.createElement("section");
+          section.className = "month";
+
+          section.innerHTML = `
+            <h2 class="month-title">${group.label}</h2>
+            <div class="events"></div>
+          `;
+
+          const eventContainer = section.querySelector(".events");
+
+          group.events.forEach(event => {
+            const d = formatDate(event.date);
+
+            const article = document.createElement("article");
+            article.className = "event";
+            article.id = eventId(event);
+
+            article.innerHTML = `
+              ${event.new_this_week ? '<div class="badge">New / changed</div>' : ""}
+
+              <div class="event-top">
+                <div class="date-box">
+                  <div class="date-day">${d.day}</div>
+                  <div class="date-weekday">${d.weekday}</div>
+                </div>
+
+                <div class="event-main">
+                  <div class="event-name">${event.name}</div>
+                  <div class="artists">${event.artists}</div>
+
+                  <div class="event-meta">
+                    <span class="pill">${event.venue}</span>
+                    <span class="pill">${categoryLabel(event.category)}</span>
+                  </div>
+
+                  ${
+                    event.time && event.time !== "—"
+                      ? `<div class="time">🕒 ${event.time}</div>`
+                      : ""
+                  }
+
+                  ${
+                    event.ticket_url
+                      ? `<a class="ticket" href="${event.ticket_url}" target="_blank" rel="noopener noreferrer">${event.ticket_label || "Tickets"}</a>`
+                      : ""
+                  }
+                </div>
+              </div>
+            `;
+
+            eventContainer.appendChild(article);
+          });
+
+          months.appendChild(section);
+        });
+    }
+
+    function renderFooter() {
+      document.getElementById("footer").textContent =
+        `Last checked ${data.last_checked}. Event information is verified against available promoter, venue and ticketing sources.`;
+    }
+
+    function render() {
+      renderNew();
+      renderEvents();
+      renderFooter();
+    }
+
+    document.querySelectorAll(".filter").forEach(button => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".filter").forEach(b => b.classList.remove("active"));
+        button.classList.add("active");
+
+        currentFilter = button.dataset.filter;
+        render();
+      });
+    });
+
+    fetch("events.json")
+      .then(response => response.json())
+      .then(json => {
+        data = json;
+        render();
+      })
+      .catch(error => {
+        console.error(error);
+        document.getElementById("months").innerHTML =
+          '<div class="empty">Unable to load event data.</div>';
+      });
+
+    document.addEventListener("click", event => {
+      const link = event.target.closest(".new-card");
+
+      if (!link) return;
+
+      setTimeout(() => {
+        const target = document.querySelector(link.hash);
+
+        if (target) {
+          target.classList.add("highlight");
+
+          setTimeout(() => {
+            target.classList.remove("highlight");
+          }, 1800);
+        }
+      }, 100);
+    });
+  </script>
+</body>
+</html>
