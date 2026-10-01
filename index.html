@@ -1,214 +1,508 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Christchurch D&B Radar</title>
-<meta name="description" content="Upcoming Christchurch drum & bass, bass and festival events.">
-<style>
-:root{
-  --bg:#0b0d10;--panel:#13171c;--panel2:#181d23;--text:#f4f6f8;--muted:#9aa4af;
-  --line:#28303a;--accent:#f5c542;--accent2:#70d6ff;
-}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}
-main{max-width:900px;margin:auto;padding:28px 16px 48px}
-header{padding:10px 0 22px}
-h1{font-size:clamp(2rem,7vw,3.4rem);line-height:1;margin:0 0 9px;letter-spacing:-.04em}
-.subtitle{color:var(--muted);margin:0;max-width:680px}
-.checked{font-size:.82rem;color:var(--muted);margin-top:10px}
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 28px}
-.filter{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:999px;padding:8px 13px;font:inherit;cursor:pointer}
-.filter.active{background:var(--text);color:var(--bg);border-color:var(--text)}
-.section-label{font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);font-weight:800;margin:0 0 11px}
-.new-section{margin-bottom:30px}
-.new-grid{display:grid;gap:10px}
-.new-card{display:block;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;padding:12px 14px;color:var(--text);text-decoration:none;transition:border-color .2s,transform .2s,background .2s}
-.new-card:hover{border-color:var(--accent);transform:translateY(-1px)}
-.new-card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.new-card strong{display:block}
-.new-meta{font-size:.86rem;color:var(--muted);margin-top:3px}
-.month{margin-top:30px}
-.month-heading{font-size:1.35rem;letter-spacing:.04em;text-transform:uppercase;margin:0 0 12px;padding-bottom:9px;border-bottom:1px solid var(--line)}
-.events{display:grid;gap:11px}
-.event{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;scroll-margin-top:18px;transition:border-color .35s,box-shadow .35s}
-.event.jump-highlight{border-color:var(--accent);box-shadow:0 0 0 3px rgba(245,197,66,.16)}
-.event-top{display:flex;gap:12px;align-items:flex-start}
-.date{min-width:55px;text-align:center;border-right:1px solid var(--line);padding-right:12px}
-.day{font-size:1.45rem;font-weight:850;line-height:1}
-.dow{font-size:.7rem;color:var(--muted);text-transform:uppercase;margin-top:4px}
-.info{min-width:0;flex:1}
-.name{font-size:1.05rem;font-weight:800;margin:0}
-.artists{color:#d7dce2;margin-top:3px;font-size:.92rem}
-.venue{color:var(--muted);font-size:.84rem;margin-top:4px}
-.badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
-.badge{font-size:.7rem;padding:3px 7px;border-radius:999px;background:var(--panel2);border:1px solid var(--line);color:var(--muted)}
-.badge.new{color:var(--bg);background:var(--accent);border-color:var(--accent);font-weight:800}
-.actions{margin-top:11px}
-.ticket{display:inline-block;text-decoration:none;color:var(--bg);background:var(--text);border-radius:8px;padding:7px 10px;font-size:.8rem;font-weight:750}
-.empty{color:var(--muted);padding:20px 0}
-footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-size:.76rem;color:var(--muted)}
-@media(min-width:650px){
-  .new-grid{grid-template-columns:repeat(2,1fr)}
-  .event{padding:16px}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christchurch D&B Radar</title>
+
+  <style>
+    :root {
+      --bg: #0b0b0d;
+      --card: #151519;
+      --card-2: #1b1b21;
+      --text: #f4f4f5;
+      --muted: #a5a5ad;
+      --accent: #ffffff;
+      --border: #292930;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.45;
+    }
+
+    .wrap {
+      width: min(100% - 28px, 900px);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 28px 0 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.8rem, 7vw, 2.8rem);
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .filters {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 8px 0 18px;
+      scrollbar-width: none;
+    }
+
+    .filters::-webkit-scrollbar {
+      display: none;
+    }
+
+    .filter {
+      flex: 0 0 auto;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 9px 14px;
+      cursor: pointer;
+      font-size: 0.88rem;
+    }
+
+    .filter.active {
+      background: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+    }
+
+    section {
+      margin: 20px 0 30px;
+    }
+
+    .section-title {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .new-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .new-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .new-card:hover {
+      transform: translateY(-1px);
+      border-color: #55555f;
+    }
+
+    .new-card-date {
+      font-size: 0.76rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .new-card-name {
+      margin-top: 3px;
+      font-weight: 700;
+    }
+
+    .month {
+      margin-top: 34px;
+    }
+
+    .month-title {
+      font-size: 1.25rem;
+      margin: 0 0 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .events {
+      display: grid;
+      gap: 12px;
+    }
+
+    .event {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      scroll-margin-top: 20px;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .event.highlight {
+      background: var(--card-2);
+      border-color: #777783;
+    }
+
+    .event-top {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .date-box {
+      min-width: 54px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+      padding-right: 12px;
+    }
+
+    .date-day {
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .date-weekday {
+      margin-top: 4px;
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .event-main {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .event-name {
+      font-size: 1.08rem;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .artists {
+      color: #d5d5da;
+      font-size: 0.9rem;
+    }
+
+    .event-meta {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pill {
+      display: inline-block;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .time {
+      margin-top: 9px;
+      font-size: 0.86rem;
+      color: #e6e6e9;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 4px 7px;
+      border-radius: 6px;
+      background: #fff;
+      color: #000;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .ticket {
+      display: inline-block;
+      margin-top: 13px;
+      padding: 9px 13px;
+      border-radius: 9px;
+      background: #fff;
+      color: #000;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .ticket:hover {
+      opacity: 0.85;
+    }
+
+    .empty {
+      color: var(--muted);
+      padding: 30px 0;
+    }
+
+    footer {
+      margin: 42px 0 28px;
+      color: #777780;
+      font-size: 0.75rem;
+      text-align: center;
+    }
+
+    @media (min-width: 650px) {
+      .new-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
 </head>
+
 <body>
-<main>
-<header>
-  <h1>Christchurch D&B Radar</h1>
-  <p class="subtitle">Upcoming drum & bass, bass and selected festival events around Christchurch.</p>
-  <div class="checked" id="checked">Checking latest update…</div>
-</header>
-
-<section class="new-section" id="newSection" hidden>
-  <p class="section-label">🆕 New / changed this week</p>
-  <div class="new-grid" id="newGrid"></div>
-</section>
-
-<div class="filters" aria-label="Genre filters">
-  <button class="filter active" data-filter="all">All</button>
-  <button class="filter" data-filter="dnb">🔥 D&amp;B</button>
-  <button class="filter" data-filter="bass">🔊 Bass / adjacent</button>
-  <button class="filter" data-filter="festival">🌊 Festivals</button>
-</div>
-
-<section id="calendar"></section>
-<div class="empty" id="empty" hidden>No upcoming events match this filter.</div>
-
-<footer>
-  Events are grouped by month and sorted chronologically. Past events disappear automatically.
-  Event details and ticket links should be verified against the linked promoter/ticketing source before relying on them.
-</footer>
-</main>
-
-<script>
-const monthFormatter = new Intl.DateTimeFormat('en-NZ',{month:'long',year:'numeric'});
-const weekdayFormatter = new Intl.DateTimeFormat('en-NZ',{weekday:'short'});
-const dayFormatter = new Intl.DateTimeFormat('en-NZ',{day:'2-digit'});
-
-let data = null;
-let activeFilter = 'all';
-
-function eventDate(e){ return new Date(e.date + 'T00:00:00'); }
-
-function categoryLabel(category){
-  return category === 'dnb' ? 'D&B' : category === 'bass' ? 'Bass / adjacent' : 'Festival';
-}
-
-function eventId(e){
-  return 'event-' + e.date + '-' + e.name.toLowerCase()
-    .replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
-}
-
-function eventCard(e){
-  const d = eventDate(e);
-  const ticket = e.ticket_url
-    ? `<div class="actions"><a class="ticket" href="${e.ticket_url}" target="_blank" rel="noopener">${e.ticket_label || 'Tickets'}</a></div>`
-    : '';
-  return `
-    <article class="event" id="${eventId(e)}">
-      <div class="event-top">
-        <div class="date">
-          <div class="day">${dayFormatter.format(d)}</div>
-          <div class="dow">${weekdayFormatter.format(d)}</div>
-        </div>
-        <div class="info">
-          <p class="name">${e.name}</p>
-          <div class="artists">${e.artists || ''}</div>
-          <div class="venue">${e.venue || ''}</div>
-          <div class="badges">
-            <span class="badge">${categoryLabel(e.category)}</span>
-            ${e.new_this_week ? '<span class="badge new">NEW / CHANGED</span>' : ''}
-          </div>
-          ${ticket}
-        </div>
+  <div class="wrap">
+    <header>
+      <h1>Christchurch D&B Radar</h1>
+      <div class="subtitle">
+        Drum & Bass, bass-adjacent events & selected festivals
       </div>
-    </article>`;
-}
+    </header>
 
-function render(){
-  const cutoff = new Date(data.last_checked + 'T00:00:00');
-  const filtered = data.events
-    .filter(e => eventDate(e) >= cutoff)
-    .filter(e => activeFilter === 'all' || e.category === activeFilter)
-    .sort((a,b) => eventDate(a) - eventDate(b));
+    <div class="filters">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="dnb">🔥 D&B</button>
+      <button class="filter" data-filter="bass">🔊 Bass / adjacent</button>
+      <button class="filter" data-filter="festival">🌊 Festivals</button>
+    </div>
 
-  const newEvents = data.events
-    .filter(e => e.new_this_week)
-    .filter(e => activeFilter === 'all' || e.category === activeFilter)
-    .sort((a,b) => eventDate(a) - eventDate(b));
+    <section id="new-section">
+      <div class="section-title">New / changed this week</div>
+      <div id="new-grid" class="new-grid"></div>
+    </section>
 
-  const newSection = document.getElementById('newSection');
-  const newGrid = document.getElementById('newGrid');
-  newSection.hidden = newEvents.length === 0;
-  newGrid.innerHTML = newEvents.map(e => `
-    <a class="new-card" href="#${eventId(e)}" data-event-link="${eventId(e)}">
-      <strong>${e.name}</strong>
-      <div class="new-meta">${dayFormatter.format(eventDate(e))} · ${e.venue || ''}</div>
-    </a>`).join('');
+    <main id="months"></main>
 
-  const calendar = document.getElementById('calendar');
-  const empty = document.getElementById('empty');
-  calendar.innerHTML = '';
+    <footer id="footer"></footer>
+  </div>
 
-  const groups = {};
-  for(const e of filtered){
-    const key = e.date.slice(0,7);
-    (groups[key] ||= []).push(e);
-  }
+  <script>
+    let data = null;
+    let currentFilter = "all";
 
-  const keys = Object.keys(groups).sort();
-  empty.hidden = keys.length > 0;
+    function formatDate(dateString) {
+      const date = new Date(dateString + "T00:00:00");
+      return {
+        day: date.getDate(),
+        weekday: date.toLocaleDateString("en-NZ", { weekday: "short" }),
+        month: date.toLocaleDateString("en-NZ", { month: "long" }),
+        year: date.getFullYear()
+      };
+    }
 
-  for(const key of keys){
-    const section = document.createElement('section');
-    section.className = 'month';
-    const headingDate = new Date(key + '-01T00:00:00');
-    section.innerHTML = `<h2 class="month-heading">${monthFormatter.format(headingDate)}</h2>
-      <div class="events">${groups[key].map(eventCard).join('')}</div>`;
-    calendar.appendChild(section);
-  }
-}
+    function eventId(event) {
+      return (
+        "event-" +
+        event.date +
+        "-" +
+        event.name
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-|-$/g, "")
+      );
+    }
 
-async function load(){
-  try{
-    const response = await fetch('events.json', {cache:'no-store'});
-    if(!response.ok) throw new Error('events.json could not be loaded');
-    data = await response.json();
-    document.getElementById('checked').textContent = `Last checked: ${data.last_checked}`;
-    render();
-  }catch(err){
-    document.getElementById('checked').textContent = 'Unable to load the event data right now.';
-    document.getElementById('empty').hidden = false;
-  }
-}
+    function categoryLabel(category) {
+      if (category === "dnb") return "D&B";
+      if (category === "bass") return "Bass / adjacent";
+      if (category === "festival") return "Festival";
+      return category;
+    }
 
-document.addEventListener('click', (event) => {
-  const link = event.target.closest('[data-event-link]');
-  if(!link) return;
-  const target = document.getElementById(link.dataset.eventLink);
-  if(!target) return;
-  event.preventDefault();
-  history.replaceState(null, '', '#' + link.dataset.eventLink);
-  target.scrollIntoView({behavior:'smooth', block:'center'});
-  target.classList.remove('jump-highlight');
-  void target.offsetWidth;
-  target.classList.add('jump-highlight');
-  setTimeout(() => target.classList.remove('jump-highlight'), 1800);
-});
+    function visibleEvents() {
+      return data.events
+        .filter(event => currentFilter === "all" || event.category === currentFilter)
+        .filter(event => event.date >= data.last_checked)
+        .sort((a, b) => a.date.localeCompare(b.date));
+    }
 
-document.querySelectorAll('.filter').forEach(button=>{
-  button.addEventListener('click',()=>{
-    document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
-    button.classList.add('active');
-    activeFilter = button.dataset.filter;
-    if(data) render();
-  });
-});
+    function renderNew() {
+      const grid = document.getElementById("new-grid");
+      const newEvents = visibleEvents().filter(event => event.new_this_week);
 
-load();
-</script>
+      grid.innerHTML = "";
+
+      if (!newEvents.length) {
+        document.getElementById("new-section").style.display = "none";
+        return;
+      }
+
+      document.getElementById("new-section").style.display = "";
+
+      newEvents.forEach(event => {
+        const d = formatDate(event.date);
+
+        const card = document.createElement("a");
+        card.className = "new-card";
+        card.href = "#" + eventId(event);
+
+        card.innerHTML = `
+          <div class="new-card-date">${d.weekday} ${d.day} ${d.month}</div>
+          <div class="new-card-name">${event.name}</div>
+        `;
+
+        grid.appendChild(card);
+      });
+    }
+
+    function renderEvents() {
+      const months = document.getElementById("months");
+      months.innerHTML = "";
+
+      const events = visibleEvents();
+
+      if (!events.length) {
+        months.innerHTML = '<div class="empty">No upcoming events match this filter.</div>';
+        return;
+      }
+
+      const grouped = {};
+
+      events.forEach(event => {
+        const d = formatDate(event.date);
+        const key = `${d.year}-${String(new Date(event.date + "T00:00:00").getMonth() + 1).padStart(2, "0")}`;
+
+        if (!grouped[key]) {
+          grouped[key] = {
+            label: `${d.month.toUpperCase()} ${d.year}`,
+            events: []
+          };
+        }
+
+        grouped[key].events.push(event);
+      });
+
+      Object.keys(grouped)
+        .sort()
+        .forEach(key => {
+          const group = grouped[key];
+
+          const section = document.createElement("section");
+          section.className = "month";
+
+          section.innerHTML = `
+            <h2 class="month-title">${group.label}</h2>
+            <div class="events"></div>
+          `;
+
+          const eventContainer = section.querySelector(".events");
+
+          group.events.forEach(event => {
+            const d = formatDate(event.date);
+
+            const article = document.createElement("article");
+            article.className = "event";
+            article.id = eventId(event);
+
+            article.innerHTML = `
+              ${event.new_this_week ? '<div class="badge">New / changed</div>' : ""}
+
+              <div class="event-top">
+                <div class="date-box">
+                  <div class="date-day">${d.day}</div>
+                  <div class="date-weekday">${d.weekday}</div>
+                </div>
+
+                <div class="event-main">
+                  <div class="event-name">${event.name}</div>
+                  <div class="artists">${event.artists}</div>
+
+                  <div class="event-meta">
+                    <span class="pill">${event.venue}</span>
+                    <span class="pill">${categoryLabel(event.category)}</span>
+                  </div>
+
+                  ${
+                    event.time && event.time !== "—"
+                      ? `<div class="time">🕒 ${event.time}</div>`
+                      : ""
+                  }
+
+                  ${
+                    event.ticket_url
+                      ? `<a class="ticket" href="${event.ticket_url}" target="_blank" rel="noopener noreferrer">${event.ticket_label || "Tickets"}</a>`
+                      : ""
+                  }
+                </div>
+              </div>
+            `;
+
+            eventContainer.appendChild(article);
+          });
+
+          months.appendChild(section);
+        });
+    }
+
+    function renderFooter() {
+      document.getElementById("footer").textContent =
+        `Last checked ${data.last_checked}. Event information is verified against available promoter, venue and ticketing sources.`;
+    }
+
+    function render() {
+      renderNew();
+      renderEvents();
+      renderFooter();
+    }
+
+    document.querySelectorAll(".filter").forEach(button => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".filter").forEach(b => b.classList.remove("active"));
+        button.classList.add("active");
+
+        currentFilter = button.dataset.filter;
+        render();
+      });
+    });
+
+    fetch("events.json")
+      .then(response => response.json())
+      .then(json => {
+        data = json;
+        render();
+      })
+      .catch(error => {
+        console.error(error);
+        document.getElementById("months").innerHTML =
+          '<div class="empty">Unable to load event data.</div>';
+      });
+
+    document.addEventListener("click", event => {
+      const link = event.target.closest(".new-card");
+
+      if (!link) return;
+
+      setTimeout(() => {
+        const target = document.querySelector(link.hash);
+
+        if (target) {
+          target.classList.add("highlight");
+
+          setTimeout(() => {
+            target.classList.remove("highlight");
+          }, 1800);
+        }
+      }, 100);
+    });
+  </script>
 </body>
 </html>
