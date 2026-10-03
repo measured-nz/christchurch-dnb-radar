@@ -14,8 +14,7 @@
       "category": "bass",
       "artists": "Le Butin · Mr Meaty Boy · Emilie · Frog · Boom Candy · Saber Lights",
       "ticket_url": "",
-      "ticket_label": "",
-      "new_this_week": true
+      "ticket_label": ""
     },
     {
       "date": "2026-10-09",
@@ -25,8 +24,7 @@
       "category": "dnb",
       "artists": "Danny Byrd · Unglued · HOAX",
       "ticket_url": "",
-      "ticket_label": "",
-      "new_this_week": true
+      "ticket_label": ""
     },
     {
       "date": "2026-10-10",
@@ -36,8 +34,7 @@
       "category": "bass",
       "artists": "Grommie · ManicErratic · Sumthn Ethnic · KinetiX · AudioJunkie B2B Cleva · RainMaker_Select",
       "ticket_url": "https://events.humanitix.com/ectospasm",
-      "ticket_label": "Humanitix",
-      "new_this_week": true
+      "ticket_label": "Humanitix"
     },
     {
       "date": "2026-10-10",
@@ -47,8 +44,7 @@
       "category": "dnb",
       "artists": "The Upbeats",
       "ticket_url": "",
-      "ticket_label": "",
-      "new_this_week": true
+      "ticket_label": ""
     },
     {
       "date": "2026-10-17",
@@ -59,7 +55,7 @@
       "artists": "Shapeshifter DJ Set · goddard. · Katayanagi Twins · Where's Jai · Emeryx · Gareth · Joyce King Tides · Nilez · Sweet Pea · The Haizys",
       "ticket_url": "https://ra.co/events/2522262",
       "ticket_label": "Resident Advisor",
-      "new_this_week": true
+      "change": "new"
     },
     {
       "date": "2026-10-17",
@@ -70,7 +66,7 @@
       "artists": "PULSATE DJs · Drum & Bass · House · Garage · Jungle",
       "ticket_url": "https://events.humanitix.com/midnight-mass-event",
       "ticket_label": "Humanitix",
-      "new_this_week": true
+      "change": "new"
     },
     {
       "date": "2026-10-17",
@@ -80,8 +76,7 @@
       "category": "dnb",
       "artists": "goddard.",
       "ticket_url": "",
-      "ticket_label": "",
-      "new_this_week": true
+      "ticket_label": ""
     },
     {
       "date": "2026-10-17",
@@ -91,8 +86,7 @@
       "category": "bass",
       "artists": "Optimus Gryme · Mish & Greeen · Indecisive · Bulla · Neutze",
       "ticket_url": "",
-      "ticket_label": "",
-      "new_this_week": true
+      "ticket_label": ""
     },
     {
       "date": "2026-10-24",
@@ -102,8 +96,7 @@
       "category": "dnb",
       "artists": "Seddy · Little Bird · Bambi · Willy B · Domas · J Howler · Lozz · Tekmatik · The Host From The Coast · Captain Johnny",
       "ticket_url": "https://events.humanitix.com/evilbrewe-3-dnb-domination-and-skate-sesh",
-      "ticket_label": "Humanitix",
-      "new_this_week": true
+      "ticket_label": "Humanitix"
     },
     {
       "date": "2026-10-24",
@@ -113,8 +106,7 @@
       "category": "bass",
       "artists": "103 Soundsystem × Kōwhai Grove",
       "ticket_url": "",
-      "ticket_label": "",
-      "new_this_week": true
+      "ticket_label": ""
     },
     {
       "date": "2026-10-24",
@@ -124,8 +116,7 @@
       "category": "bass",
       "artists": "J Howler · Rasty · Creamie · Fulla · Chetty D · liquid / rollers / jungle / 140s",
       "ticket_url": "",
-      "ticket_label": "",
-      "new_this_week": true
+      "ticket_label": ""
     },
     {
       "date": "2026-10-31",
@@ -135,8 +126,7 @@
       "category": "bass",
       "artists": "Paige Julia (3-hour set) · 190E · Cetra · Dargie · Delicious · Emeryx · Export · Kinect · Low Def · Murkz · Serranz + wildcard",
       "ticket_url": "",
-      "ticket_label": "",
-      "new_this_week": true
+      "ticket_label": ""
     },
     {
       "date": "2026-11-06",
@@ -146,8 +136,7 @@
       "category": "dnb",
       "artists": "Turno (UK) · jump-up D&B",
       "ticket_url": "https://www.audiologytouring.com/events/turno-uk-christchurch",
-      "ticket_label": "Audiology",
-      "new_this_week": true
+      "ticket_label": "Audiology"
     },
     {
       "date": "2026-11-20",
@@ -157,8 +146,7 @@
       "category": "dnb",
       "artists": "Hedex & Eksman · Mozey · Simula · Amplify · Nersha · Damage Control",
       "ticket_url": "https://moshtix.co.nz/v2/event/mhitr-hedex-eksman-mozey-simula-amplify-more-christchurch/199858",
-      "ticket_label": "Moshtix",
-      "new_this_week": true
+      "ticket_label": "Moshtix"
     },
     {
       "date": "2026-11-20",
@@ -168,8 +156,7 @@
       "category": "dnb",
       "artists": "Submarine · Strategy · Deep Tempo",
       "ticket_url": "",
-      "ticket_label": "",
-      "new_this_week": true
+      "ticket_label": ""
     },
     {
       "date": "2026-12-28",
@@ -179,8 +166,7 @@
       "category": "festival",
       "artists": "Netsky · Break · Oppidan · Lens · DJ Zinc and others",
       "ticket_url": "",
-      "ticket_label": "",
-      "new_this_week": true
+      "ticket_label": ""
     }
   ]
 }
