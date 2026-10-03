@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-10-01",
+  "last_checked": "2026-10-03",
   "source_watchlist": {
     "promoters": [
       "Southern Shakedown"
@@ -7,19 +7,8 @@
   },
   "events": [
     {
-      "date": "2026-10-02",
-      "time": "18:00–00:00",
-      "name": "DnB Allstars",
-      "venue": "Wolfbrook Arena",
-      "category": "dnb",
-      "artists": "Kanine · Camo & Krooked · Born On Road · A-Z · Crossy · Disrupta · OKO",
-      "ticket_url": "https://www.moshtix.co.nz/v2/event/dnb-allstars-nz-christchurch/196159",
-      "ticket_label": "Moshtix",
-      "new_this_week": true
-    },
-    {
       "date": "2026-10-03",
-      "time": "22:00–late",
+      "time": "22:00–02:00",
       "name": "Brainless x Euphonic",
       "venue": "Sydenham Underpass",
       "category": "bass",
@@ -30,22 +19,11 @@
     },
     {
       "date": "2026-10-09",
-      "time": "21:00–late",
+      "time": "21:00–02:00",
       "name": "Hospital30",
       "venue": "Sydenham Underpass",
       "category": "dnb",
       "artists": "Danny Byrd · Unglued · HOAX",
-      "ticket_url": "",
-      "ticket_label": "",
-      "new_this_week": true
-    },
-    {
-      "date": "2026-10-10",
-      "time": "—",
-      "name": "The Upbeats All Night",
-      "venue": "The Assembly",
-      "category": "dnb",
-      "artists": "The Upbeats",
       "ticket_url": "",
       "ticket_label": "",
       "new_this_week": true
@@ -62,8 +40,41 @@
       "new_this_week": true
     },
     {
+      "date": "2026-10-10",
+      "time": "21:30–late",
+      "name": "The Upbeats All Night",
+      "venue": "The Assembly",
+      "category": "dnb",
+      "artists": "The Upbeats",
+      "ticket_url": "",
+      "ticket_label": "",
+      "new_this_week": true
+    },
+    {
       "date": "2026-10-17",
-      "time": "—",
+      "time": "10:30–17:00",
+      "name": "UCSA Tea Party '26",
+      "venue": "Ilam Fields",
+      "category": "festival",
+      "artists": "Shapeshifter DJ Set · goddard. · Katayanagi Twins · Where's Jai · Emeryx · Gareth · Joyce King Tides · Nilez · Sweet Pea · The Haizys",
+      "ticket_url": "https://ra.co/events/2522262",
+      "ticket_label": "Resident Advisor",
+      "new_this_week": true
+    },
+    {
+      "date": "2026-10-17",
+      "time": "20:00–01:30",
+      "name": "MIDNIGHT MASS",
+      "venue": "54 Battersea Street",
+      "category": "dnb",
+      "artists": "PULSATE DJs · Drum & Bass · House · Garage · Jungle",
+      "ticket_url": "https://events.humanitix.com/midnight-mass-event",
+      "ticket_label": "Humanitix",
+      "new_this_week": true
+    },
+    {
+      "date": "2026-10-17",
+      "time": "21:00–late",
       "name": "goddard.",
       "venue": "The Assembly",
       "category": "dnb",
