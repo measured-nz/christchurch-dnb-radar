@@ -1,43 +1,50 @@
 {
-  "last_checked": "2026-10-08",
+  "last_checked": "2026-10-15",
   "source_watchlist": {
     "promoters": [
-      "Southern Shakedown"
+      "Southern Shakedown",
+      "Audiology Touring",
+      "DnB Allstars",
+      "Cream Events",
+      "Poltergeist Promotions"
+    ],
+    "venues": [
+      "The Assembly",
+      "Sydenham Underpass",
+      "Churchills Tavern",
+      "Wolfbrook Arena",
+      "Evil Genius",
+      "Addington Raceway & Events Centre"
+    ],
+    "ticketing_and_discovery": [
+      "Humanitix",
+      "Moshtix",
+      "Flicket",
+      "Tixr",
+      "Resident Advisor",
+      "House Finder",
+      "SoundsGood",
+      "UnderTheRadar",
+      "Songkick",
+      "Bandsintown",
+      "ChristchurchNZ",
+      "Christchurch City Council"
     ]
   },
   "events": [
     {
-      "date": "2026-10-09",
-      "time": "21:00–02:00",
-      "name": "Hospital30",
-      "venue": "Sydenham Underpass",
-      "category": "dnb",
-      "artists": "Danny Byrd · Unglued · HOAX · Little Bird · MC Jenna Lynn",
-      "ticket_url": "https://ra.co/events/2524129",
-      "ticket_label": "Resident Advisor",
-      "new_this_week": true
-    },
-    {
-      "date": "2026-10-10",
-      "time": "20:00–02:00",
-      "name": "EctoSpasm",
-      "venue": "Sydenham Underpass",
+      "date": "2026-10-16",
+      "time": "20:30–03:00",
+      "name": "Resonate:Nocturne — Return to the Pulse",
+      "venue": "Wunderbar, Lyttelton",
       "category": "bass",
-      "artists": "Grommie · ManicErratic · Sumthn Ethnic · KinetiX · AudioJunkie B2B Cleva · RainMaker_Select",
-      "ticket_url": "https://events.humanitix.com/ectospasm",
-      "ticket_label": "Humanitix",
-      "new_this_week": false
-    },
-    {
-      "date": "2026-10-10",
-      "time": "21:30–late",
-      "name": "The Upbeats All Night",
-      "venue": "The Assembly",
-      "category": "dnb",
-      "artists": "The Upbeats · support TBA",
-      "ticket_url": "https://www.theassemblychch.co.nz/events",
-      "ticket_label": "The Assembly",
-      "new_this_week": false
+      "artists": "Chewie · Jussy · Angelix · Hanuman · special guest TBA",
+      "age_restriction": "R18",
+      "ticket_url": "https://events.humanitix.com/resonate-nocturne-return-to-the-pulse",
+      "ticket_label": "Humanitix / door sales",
+      "source_url": "https://www.undertheradar.co.nz/gig/104704/ResonateNocturne---Return-To-The-Pulse.utr",
+      "new_this_week": true,
+      "change_note": "Newly discovered this scan; event description explicitly includes D&B and bass."
     },
     {
       "date": "2026-10-16",
@@ -46,9 +53,11 @@
       "venue": "Sydenham Underpass",
       "category": "bass",
       "artists": "Docjoc · Jousey · Porcelain · Craigslist · Cee · Pete Green",
+      "age_restriction": "TBA",
       "ticket_url": "https://events.humanitix.com/otautahi-rama",
       "ticket_label": "Humanitix",
-      "new_this_week": true
+      "source_url": "https://events.humanitix.com/otautahi-rama",
+      "new_this_week": false
     },
     {
       "date": "2026-10-17",
@@ -57,30 +66,38 @@
       "venue": "Ilam Fields",
       "category": "festival",
       "artists": "Shapeshifter (DJ set) · goddard. · Katayanagi Twins · Where's Jai · Emeryx · Gareth · Joyce · King Tides · Nilez · Sweet Pea · The Haizys",
+      "age_restriction": "R18; UC students only (limited exception for eligible Ara students living in UC halls)",
       "ticket_url": "https://haereroa.flicket.co.nz/events/fade8b4a-ad3c-4185-87a9-0de8d1f91253",
-      "ticket_label": "Flicket",
-      "new_this_week": true
+      "ticket_label": "Flicket — sold out",
+      "source_url": "https://ucsa.org.nz/teaparty/faqs/",
+      "new_this_week": true,
+      "change_note": "Newly added; official UCSA FAQ confirms date, times, eligibility and age restriction."
     },
     {
       "date": "2026-10-17",
-      "time": "TBA",
+      "time": "21:00–02:00",
       "name": "goddard. (UK)",
       "venue": "The Assembly",
       "category": "dnb",
-      "artists": "goddard. · support TBA",
+      "artists": "goddard. · Crafty MC",
+      "age_restriction": "R18",
       "ticket_url": "https://www.theassemblychch.co.nz/events",
       "ticket_label": "The Assembly",
-      "new_this_week": false
+      "source_url": "https://housefinderlive.com/events/20710",
+      "new_this_week": true,
+      "change_note": "Material lineup/time detail: Crafty MC and 21:00–02:00 confirmed in current listing."
     },
     {
       "date": "2026-10-17",
       "time": "TBA",
       "name": "City Doof",
       "venue": "Sydenham Underpass",
-      "category": "bass",
+      "category": "dnb",
       "artists": "Optimus Gryme · Mish & Greeen · Indecisive · Bulla · Neutze",
+      "age_restriction": "TBA",
       "ticket_url": "https://soundsgood.guide/gig/city-doof/",
       "ticket_label": "SoundsGood",
+      "source_url": "https://soundsgood.guide/gig/city-doof/",
       "new_this_week": false
     },
     {
@@ -90,9 +107,11 @@
       "venue": "Sydenham Underpass",
       "category": "bass",
       "artists": "Foy · Shire · Hunter B2B The Rat · Elektrician · Layd Dub · Zigzat · Kraayjoy · Kraayjoy B2B Emioh · Emioh · Ayaluna",
+      "age_restriction": "TBA",
       "ticket_url": "https://events.humanitix.com/froth-x-aperture",
       "ticket_label": "Humanitix",
-      "new_this_week": true
+      "source_url": "https://events.humanitix.com/froth-x-aperture",
+      "new_this_week": false
     },
     {
       "date": "2026-10-24",
@@ -101,8 +120,10 @@
       "venue": "Evil Genius",
       "category": "dnb",
       "artists": "Seddy · Little Bird · Bambi · Willy B · Domas · J Howler · Lozz · Tekmatik · The Host From The Coast · Captain Johnny",
+      "age_restriction": "TBA",
       "ticket_url": "https://events.humanitix.com/evilbrewe-3-dnb-domination-and-skate-sesh",
       "ticket_label": "Humanitix",
+      "source_url": "https://housefinderlive.com/events/25331",
       "new_this_week": false
     },
     {
@@ -112,9 +133,11 @@
       "venue": "Sydenham Underpass",
       "category": "bass",
       "artists": "Andwahn · Bellsy · CC:ME · Drought Tactics · Grella B2B Goose · Tikka",
-      "ticket_url": "https://stayhappening.com/e/crossroads-k%C5%8Dwhai-grove-lineup-launch-E2ISYX6BJFO",
-      "ticket_label": "Event listing",
-      "new_this_week": true
+      "age_restriction": "R18",
+      "ticket_url": "https://www.undertheradar.co.nz/gig/105003/103-And-Kwhai-Grove-Pres-Crossroads-Kwhai-Grove-Lineup-Launch.utr",
+      "ticket_label": "UnderTheRadar",
+      "source_url": "https://www.undertheradar.co.nz/gig/105003/103-And-Kwhai-Grove-Pres-Crossroads-Kwhai-Grove-Lineup-Launch.utr",
+      "new_this_week": false
     },
     {
       "date": "2026-10-24",
@@ -123,9 +146,12 @@
       "venue": "Galaxy Bar",
       "category": "bass",
       "artists": "J Howler · Rasty · Creamie · Fulla · Chetty D · liquid / rollers / jungle / 140s",
+      "age_restriction": "TBA",
       "ticket_url": "https://happeningnext.com/event/vibez-eid3a0e4d8qeb",
       "ticket_label": "Event listing",
-      "new_this_week": false
+      "source_url": "https://happeningnext.com/event/vibez-eid3a0e4d8qeb",
+      "new_this_week": false,
+      "verification_status": "Carried forward from the previous scan; not re-verified against a primary source this week."
     },
     {
       "date": "2026-10-31",
@@ -133,9 +159,11 @@
       "name": "Monster Mash ft. Paige Julia",
       "venue": "Sydenham Underpass",
       "category": "bass",
-      "artists": "Paige Julia · 190E · Cetra · Dargie · Delicious · Emeryx · Export · Kinect · Low Def · Murkz · Serranz · wildcard",
-      "ticket_url": "https://ra.co/events/2541366",
-      "ticket_label": "Resident Advisor",
+      "artists": "Paige Julia (3-hour set) · 190E · Cetra · Dargie · Delicious · Emeryx · Export · Kinect · Low Def · Murkz · Serranz · wildcard",
+      "age_restriction": "R18",
+      "ticket_url": "https://events.humanitix.com/monster-mash-ft-paige-julia",
+      "ticket_label": "Humanitix",
+      "source_url": "https://events.humanitix.com/monster-mash-ft-paige-julia",
       "new_this_week": false
     },
     {
@@ -145,9 +173,39 @@
       "venue": "The Assembly",
       "category": "dnb",
       "artists": "Turno · support TBA",
+      "age_restriction": "R18",
       "ticket_url": "https://www.audiologytouring.com/events/turno-uk-christchurch",
       "ticket_label": "Audiology",
+      "source_url": "https://www.theassemblychch.co.nz/events",
       "new_this_week": false
+    },
+    {
+      "date": "2026-11-07",
+      "time": "22:00–03:00",
+      "name": "Eigen",
+      "venue": "Churchills Tavern",
+      "category": "dnb",
+      "artists": "Eigen · Greymatter · Dylano · Dargie · 190 E",
+      "age_restriction": "R18",
+      "ticket_url": "https://events.humanitix.com/eigen-or-christchurch",
+      "ticket_label": "Humanitix",
+      "source_url": "https://events.humanitix.com/eigen-or-christchurch",
+      "new_this_week": true,
+      "change_note": "Newly discovered this scan; confirmed by Poltergeist Promotions on Humanitix."
+    },
+    {
+      "date": "2026-11-12",
+      "time": "17:30–22:30",
+      "name": "Silva Bumpa (UK)",
+      "venue": "Addington Raceway & Events Centre",
+      "category": "bass",
+      "artists": "Silva Bumpa · local support TBA",
+      "age_restriction": "R18",
+      "ticket_url": "https://www.tixr.com/groups/creamevents/events/silva-bumpa-christchurch-204025",
+      "ticket_label": "Tixr / Cream Events",
+      "source_url": "https://www.creamevents.co.nz/whats-on",
+      "new_this_week": true,
+      "change_note": "Newly discovered; UK garage, bassline and speed garage event."
     },
     {
       "date": "2026-11-13",
@@ -155,10 +213,12 @@
       "name": "Deep, Dark & Dangerous presents TRUTH",
       "venue": "Sydenham Underpass",
       "category": "bass",
-      "artists": "TRUTH · Boasteeze B2B Texture · Oren-G · Psymatic Sound Crew (Jak · Lamb · Syntrude)",
+      "artists": "TRUTH (extended 2-hour set) · Boasteeze B2B Texture · Oren-G · Psymatic Sound Crew (Jak · Lamb · Syntrude)",
+      "age_restriction": "R18",
       "ticket_url": "https://www.undertheradar.co.nz/gig/105056/Deep-Dark-And-Dangerous-Presents-TRUTH.utr",
       "ticket_label": "UnderTheRadar",
-      "new_this_week": true
+      "source_url": "https://www.undertheradar.co.nz/gig/105056/Deep-Dark-And-Dangerous-Presents-TRUTH.utr",
+      "new_this_week": false
     },
     {
       "date": "2026-11-20",
@@ -167,8 +227,10 @@
       "venue": "Wolfbrook Arena",
       "category": "dnb",
       "artists": "Hedex & Eksman · Mozey · Simula · Amplify · Nersha · Damage Control",
-      "ticket_url": "https://www.audiologytouring.com/featured/mhitr",
-      "ticket_label": "Audiology",
+      "age_restriction": "Strictly 18+",
+      "ticket_url": "https://www.rova.nz/events/my-home-is-the-rave",
+      "ticket_label": "Rova / Audiology",
+      "source_url": "https://www.rova.nz/events/my-home-is-the-rave",
       "new_this_week": false
     },
     {
@@ -178,9 +240,25 @@
       "venue": "Sydenham Underpass",
       "category": "dnb",
       "artists": "Submarine · Strategy · Deep Tempo · support Oski",
+      "age_restriction": "TBA",
       "ticket_url": "https://stayhappening.com/e/submarine-strategy-deep-tempo-%E2%80%94-christchurch-E2ISYX65G1Y",
       "ticket_label": "Southern Shakedown",
-      "new_this_week": true
+      "source_url": "https://stayhappening.com/e/submarine-strategy-deep-tempo-%E2%80%94-christchurch-E2ISYX65G1Y",
+      "new_this_week": false
+    },
+    {
+      "date": "2026-12-12",
+      "time": "21:00–02:00",
+      "name": "Bushbaby (UK)",
+      "venue": "The Assembly",
+      "category": "bass",
+      "artists": "Bushbaby · support TBA",
+      "age_restriction": "TBA",
+      "ticket_url": "https://www.theassemblychch.co.nz/events/bushbaby-christchurch",
+      "ticket_label": "The Assembly",
+      "source_url": "https://www.theassemblychch.co.nz/events/bushbaby-christchurch",
+      "new_this_week": true,
+      "change_note": "Newly discovered; UK garage, speed garage, house and rave-driven club sounds."
     },
     {
       "date": "2026-12-28",
@@ -188,32 +266,38 @@
       "name": "Lakes Festival 2026",
       "venue": "North Hagley Park",
       "category": "festival",
-      "artists": "Netsky · Break · DJ Zinc · Lens · Oppidan · ROVA · Armand Van Helden · X CLUB. · Mall Grab · Dean Turnley · Ladi6 · Sin & Brook · others",
-      "ticket_url": "https://www.ticketmaster.co.nz/lakes-music-festival-tickets/artist/4358984",
-      "ticket_label": "Ticketmaster",
+      "artists": "Netsky · Break · DJ Zinc · Lens · Oppidan · ROVA · Armand Van Helden · Mall Grab · X CLUB. · others",
+      "age_restriction": "TBA",
+      "ticket_url": "https://www.rova.nz/events/lakes-festival-2026",
+      "ticket_label": "Rova / Moshtix",
+      "source_url": "https://www.rova.nz/events/lakes-festival-2026",
       "new_this_week": false
     },
     {
       "date": "2026-12-29",
-      "time": "12:00–late",
+      "time": "Multi-day; daily schedule TBA",
       "name": "Rolling Meadows 2026/2027",
-      "venue": "Rolling Meadows, 240 Lower Styx Road",
+      "venue": "Rolling Meadows, Christchurch (Bottle Lake area)",
       "category": "festival",
       "artists": "Andy C · Culture Shock · Friction · 1991 · Mefjus · The Upbeats · A Little Sound · Andromedik · 4AM Kru · Ivy Lab · State of Mind + MC Crafty · Subsonic · Pirapus · others",
-      "ticket_url": "https://rollingmeadows.co.nz/",
-      "ticket_label": "Rolling Meadows",
-      "new_this_week": true
+      "age_restriction": "R18",
+      "ticket_url": "https://www.rova.nz/events/rolling-meadows-2026",
+      "ticket_label": "Rova / Flicket",
+      "source_url": "https://www.rova.nz/events/rolling-meadows-2026",
+      "new_this_week": false
     },
     {
       "date": "2027-02-26",
-      "time": "TBA",
+      "time": "Two-day festival; daily schedule TBA",
       "name": "Electric Avenue Music Festival 2027",
       "venue": "Hagley Park Special Events Area",
       "category": "festival",
       "artists": "Wilkinson · Hybrid Minds · K Motionz · TWOFACED · Calvin Harris · Kings Of Leon · Major Lazer · Bebe Rexha · Kehlani · Jungle · Underworld · Gorgon City · others",
-      "ticket_url": "https://www.ticketmaster.co.nz/electric-avenue-music-festival-2027-weekend-christchurch-central-city-26-02-2027/event/240064779D3B218E",
-      "ticket_label": "Ticketmaster",
-      "new_this_week": true
+      "age_restriction": "R18",
+      "ticket_url": "https://www.rova.nz/events/electric-avenue-2027",
+      "ticket_label": "Rova / official festival info",
+      "source_url": "https://www.rova.nz/events/electric-avenue-2027",
+      "new_this_week": false
     }
   ]
 }
