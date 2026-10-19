@@ -306,6 +306,200 @@
     text-align: center;
   }
 
+
+
+  /* measured. music library — additive styles */
+  .attribution {
+    margin-top: 3px;
+    font-size: 0.82rem;
+  }
+
+  .attribution a {
+    color: var(--dnb);
+    text-decoration: none;
+    text-underline-offset: 3px;
+  }
+
+  .attribution a:hover,
+  .attribution a:focus-visible {
+    text-decoration: underline;
+  }
+
+  .library-nav {
+    margin: -8px 0 22px;
+  }
+
+  .library-nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--dnb);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 700;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 8px 13px;
+    background: rgba(17, 20, 26, 0.72);
+  }
+
+  .library-nav a:hover,
+  .library-nav a:focus-visible {
+    border-color: var(--dnb);
+    outline-offset: 3px;
+  }
+
+  .music-library {
+    margin: 44px 0 30px;
+    padding-top: 25px;
+    border-top: 1px solid var(--border);
+    scroll-margin-top: 18px;
+  }
+
+  .library-heading {
+    margin-bottom: 22px;
+  }
+
+  .library-heading .section-title {
+    margin-bottom: 5px;
+    color: var(--dnb);
+  }
+
+  .library-heading h2 {
+    margin: 0;
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    letter-spacing: -0.055em;
+  }
+
+  .library-heading p {
+    margin: 5px 0 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .music-subgenres {
+    display: grid;
+    gap: 9px;
+  }
+
+  .subgenre {
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background: rgba(17, 20, 26, 0.82);
+    overflow: clip;
+  }
+
+  .subgenre > summary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 54px;
+    padding: 14px 16px;
+    cursor: pointer;
+    list-style: none;
+    font-weight: 700;
+  }
+
+  .subgenre > summary::-webkit-details-marker,
+  .volume > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .subgenre > summary::before,
+  .volume > summary::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    flex: 0 0 7px;
+    border-right: 1.5px solid var(--muted);
+    border-bottom: 1.5px solid var(--muted);
+    transform: rotate(-45deg);
+    transition: transform 0.16s ease;
+    margin-right: 2px;
+  }
+
+  .subgenre[open] > summary::before,
+  .volume[open] > summary::before {
+    transform: rotate(45deg) translate(-2px, -2px);
+  }
+
+  .subgenre > summary:hover,
+  .volume > summary:hover {
+    background: var(--card-hover);
+  }
+
+  .subgenre > summary:focus-visible,
+  .volume > summary:focus-visible,
+  .volume-link:focus-visible {
+    outline: 2px solid var(--dnb);
+    outline-offset: -3px;
+  }
+
+  .volume-list {
+    padding: 0 12px 12px 33px;
+    display: grid;
+    gap: 7px;
+  }
+
+  .volume {
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    overflow: clip;
+    background: rgba(8, 9, 12, 0.45);
+  }
+
+  .volume > summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    padding: 11px 13px;
+    cursor: pointer;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .volume-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 44px;
+    padding: 11px 13px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: rgba(8, 9, 12, 0.45);
+  }
+
+  .volume-link:hover {
+    color: var(--dnb);
+    border-color: var(--dnb);
+    background: var(--card-hover);
+  }
+
+  .volume-link svg {
+    flex: 0 0 auto;
+  }
+
+  .library-status {
+    color: var(--muted);
+    font-size: 0.88rem;
+    margin: 0;
+    padding: 14px 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .subgenre > summary::before,
+    .volume > summary::before { transition: none; }
+  }
+
   @media (min-width: 650px) {
     .new-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -321,6 +515,7 @@
       <div class="subtitle">
         Drum & Bass, bass-adjacent events & selected festivals
       </div>
+      <div class="subtitle attribution">brought to you by <a href="#music-library">measured.</a></div>
     </header>
 
     <div class="filters">
@@ -329,6 +524,9 @@
       <button class="filter" data-filter="bass">🔊 Bass / adjacent</button>
       <button class="filter" data-filter="festival">🌊 Festivals</button>
     </div>
+    <nav class="library-nav" aria-label="Page sections">
+      <a href="#music-library">Music Library <span aria-hidden="true">↓</span></a>
+    </nav>
 
     <section id="new-section">
       <div class="section-title">New / changed this week</div>
@@ -336,6 +534,17 @@
     </section>
 
     <main id="months"></main>
+
+    <section id="music-library" class="music-library" aria-labelledby="music-library-title">
+      <div class="library-heading">
+        <div class="section-title">Music Library</div>
+        <h2 id="music-library-title">measured.</h2>
+        <p>Drum &amp; Bass</p>
+      </div>
+      <div id="music-subgenres" class="music-subgenres" aria-live="polite">
+        <p class="library-status">Loading music library…</p>
+      </div>
+    </section>
 
     <footer id="footer"></footer>
   </div>
@@ -549,5 +758,6 @@
       }, 100);
     });
   </script>
+  <script src="music-library.js" defer></script>
 </body>
 </html>

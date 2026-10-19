@@ -1,0 +1,31 @@
+{
+  "artist": "measured.",
+  "genre": "Drum & Bass",
+  "subgenres": [
+    {
+      "name": "Oh My Knees!",
+      "volumes": [
+        {
+          "number": 1,
+          "url": "https://drive.google.com/file/d/1Z4pTn2fsViXVSMXX61cUz8ZVb2LuP4lt/view?usp=drive_link"
+        },
+        {
+          "number": 2,
+          "url": "https://drive.google.com/file/d/1Db2ohCXR_V3Pf6QD-Ggu5Wgv-KlqbZAp/view?usp=drive_link"
+        }
+      ]
+    },
+    {
+      "name": "Dark Liquid",
+      "volumes": []
+    },
+    {
+      "name": "Minimal",
+      "volumes": []
+    },
+    {
+      "name": "Misc.",
+      "volumes": []
+    }
+  ]
+}
