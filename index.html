@@ -18,6 +18,7 @@
     --bass: #b56cff;
     --festival: #36e0a0;
     --new: #ffcf4a;
+    --changed: #60a5fa;
   }
 
   * {
@@ -108,6 +109,10 @@
     font-weight: 700;
   }
 
+  .update-section[hidden] {
+    display: none;
+  }
+
   .new-grid {
     display: grid;
     gap: 10px;
@@ -117,24 +122,26 @@
     display: block;
     text-decoration: none;
     color: inherit;
-    background: linear-gradient(
-      135deg,
-      rgba(255, 207, 74, 0.10),
-      rgba(17, 20, 26, 0.95) 55%
-    );
-    border: 1px solid rgba(255, 207, 74, 0.35);
-    border-left: 3px solid var(--new);
+    background: var(--card);
+    border: 1.5px solid var(--new);
     border-radius: 14px;
     padding: 14px;
-    transition: transform 0.15s ease, border-color 0.15s ease;
+    transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  }
+
+  .new-card--changed {
+    border-color: var(--changed);
   }
 
   .new-card:hover {
     transform: translateY(-2px);
-    border-color: var(--new);
+    background: var(--card-hover);
   }
 
   .new-card-date {
+    display: flex;
+    align-items: center;
+    gap: 7px;
     font-size: 0.72rem;
     color: var(--new);
     text-transform: uppercase;
@@ -142,9 +149,19 @@
     font-weight: 700;
   }
 
+  .new-card--changed .new-card-date {
+    color: var(--changed);
+  }
+
   .new-card-name {
-    margin-top: 4px;
+    margin-top: 5px;
     font-weight: 700;
+  }
+
+  .new-card-note {
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 0.82rem;
   }
 
   .month {
@@ -192,10 +209,38 @@
     background: var(--dnb);
   }
 
+  .event.event--new {
+    border: 1.5px solid var(--new);
+    box-shadow: 0 0 0 1px rgba(255, 207, 74, 0.10);
+  }
+
+  .event.event--changed {
+    border: 1.5px solid var(--changed);
+    box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.10);
+  }
+
   .event.highlight {
     background: #1b2029;
-    border-color: var(--new);
-    box-shadow: 0 0 0 1px rgba(255, 207, 74, 0.15);
+  }
+
+  .event-status {
+    display: inline-block;
+    margin-bottom: 9px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid var(--new);
+    color: var(--new);
+    background: rgba(255, 207, 74, 0.08);
+    font-size: 0.66rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .event-status--changed {
+    border-color: var(--changed);
+    color: var(--changed);
+    background: rgba(96, 165, 250, 0.08);
   }
 
   .event-top {
@@ -554,9 +599,14 @@
       <a href="#music-library">Music Library <span aria-hidden="true">↓</span></a>
     </nav>
 
-    <section id="new-section">
-      <div class="section-title">New / changed this week</div>
+    <section id="new-section" class="update-section" hidden>
+      <div class="section-title">New Events <span aria-label="Yellow means new">· Yellow</span></div>
       <div id="new-grid" class="new-grid"></div>
+    </section>
+
+    <section id="changed-section" class="update-section" hidden>
+      <div class="section-title" style="color: var(--changed)">Significant Updates <span>· Blue</span></div>
+      <div id="changed-grid" class="new-grid"></div>
     </section>
 
     <main id="months"></main>
@@ -615,33 +665,51 @@
         .sort((a, b) => a.date.localeCompare(b.date));
     }
 
-    function renderNew() {
-      const grid = document.getElementById("new-grid");
-      const newEvents = visibleEvents().filter(event => event.new_this_week);
+    function statusIsCurrent(event) {
+      // Cancellation/postponement notices stay visible while the upcoming event remains relevant.
+      if (event.change_significance === "critical") return event.date >= data.last_checked;
+      const statusDate = event.status_date || data.last_checked;
+      const parsed = new Date(statusDate + "T00:00:00");
+      const today = new Date(data.last_checked + "T00:00:00");
+      const ageDays = Math.floor((today - parsed) / 86400000);
+      return ageDays >= 0 && ageDays <= 7;
+    }
 
+    function eventStatus(event) {
+      if (!statusIsCurrent(event)) return "";
+      if (event.new_this_week) return "new";
+      if (event.changed_this_week && ["significant", "critical"].includes(event.change_significance)) return "changed";
+      return "";
+    }
+
+    function renderUpdateCards(sectionId, gridId, status) {
+      const section = document.getElementById(sectionId);
+      const grid = document.getElementById(gridId);
+      const matches = visibleEvents().filter(event => eventStatus(event) === status);
       grid.innerHTML = "";
+      section.hidden = matches.length === 0;
 
-      if (!newEvents.length) {
-        document.getElementById("new-section").style.display = "none";
-        return;
-      }
-
-      document.getElementById("new-section").style.display = "";
-
-      newEvents.forEach(event => {
+      matches.forEach(event => {
         const d = formatDate(event.date);
-
         const card = document.createElement("a");
-        card.className = "new-card";
+        card.className = `new-card${status === "changed" ? " new-card--changed" : ""}`;
         card.href = "#" + eventId(event);
-
+        const label = status === "new" ? "NEW" : "UPDATED";
+        const note = status === "changed" && event.change_note
+          ? `<div class="new-card-note">${event.change_note}</div>`
+          : "";
         card.innerHTML = `
-          <div class="new-card-date">${d.weekday} ${d.day} ${d.month}</div>
+          <div class="new-card-date"><span>${label}</span><span>${d.weekday} ${d.day} ${d.month}</span></div>
           <div class="new-card-name">${event.name}</div>
+          ${note}
         `;
-
         grid.appendChild(card);
       });
+    }
+
+    function renderNew() {
+      renderUpdateCards("new-section", "new-grid", "new");
+      renderUpdateCards("changed-section", "changed-grid", "changed");
     }
 
     function renderEvents() {
@@ -690,11 +758,12 @@
             const d = formatDate(event.date);
 
             const article = document.createElement("article");
-            article.className = "event";
+            const status = eventStatus(event);
+            article.className = `event${status === "new" ? " event--new" : status === "changed" ? " event--changed" : ""}`;
             article.id = eventId(event);
 
             article.innerHTML = `
-              ${event.new_this_week ? '<div class="badge">New / changed</div>' : ""}
+              ${status === "new" ? '<div class="event-status">NEW</div>' : status === "changed" ? '<div class="event-status event-status--changed">UPDATED</div>' : ""}
 
               <div class="event-top">
                 <div class="date-box">
