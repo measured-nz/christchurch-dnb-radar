@@ -40,14 +40,24 @@
         if (!volume || !Number.isInteger(volume.number) || volume.number < 1 || !isValidUrl(volume.url)) {
           throw new Error("A volume entry is invalid or has no valid Google Drive link.");
         }
+        if (volume.tagline !== undefined && typeof volume.tagline !== "string") {
+          throw new Error("A volume tagline must be text when provided.");
+        }
 
         // The volume row itself links directly to its extended DJ mix.
-        const link = make("a", "volume-link", `Vol. ${volume.number}`);
+        const link = make("a", "volume-link");
         link.href = volume.url;
         link.target = "_blank";
         link.rel = "noopener noreferrer";
-        link.setAttribute("aria-label", `Open ${subgenre.name}, Vol. ${volume.number} in Google Drive (opens in a new tab)`);
-        const external = make("span", "", "↗");
+        link.setAttribute("aria-label", `Open ${subgenre.name}, Vol. ${volume.number}${volume.tagline ? `: ${volume.tagline}` : ""} in Google Drive (opens in a new tab)`);
+
+        const copy = make("span", "volume-link-copy");
+        copy.appendChild(make("span", "volume-title", `Vol. ${volume.number}`));
+        if (volume.tagline && volume.tagline.trim()) {
+          copy.appendChild(make("span", "volume-tagline", volume.tagline.trim()));
+        }
+        link.appendChild(copy);
+        const external = make("span", "volume-external", "↗");
         external.setAttribute("aria-hidden", "true");
         link.appendChild(external);
         volumes.appendChild(link);
