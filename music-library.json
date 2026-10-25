@@ -37,8 +37,13 @@
       "volumes": [
         {
           "number": 1,
+          "url": "https://drive.google.com/file/d/16nXc8gxNC60-m_TtbmdO0mmUr45RZTa8/view?usp=sharing",
+          "tagline": "Minimal Roller Mix (Amoss artist tribute) | 2025-08"
+        },
+        {
+          "number": 2,
           "url": "https://drive.google.com/file/d/1s1f_oM1zp3IaawQY8kacmWTdCnW4X5NY/view?usp=drive_link",
-          "tagline": "Murk Mix"
+          "tagline": "Murk Mix | 2026-05"
         }
       ]
     },
