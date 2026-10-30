@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-10-25",
+  "last_checked": "2026-10-31",
   "source_watchlist": {
     "promoters": [
       "Southern Shakedown",
@@ -11,7 +11,9 @@
       "Aperture",
       "UCSA",
       "PULSATE",
-      "Frontline Collective"
+      "Frontline Collective",
+      "DnB Allstars",
+      "South Media Entertainment"
     ],
     "venues": [
       "The Assembly",
@@ -35,7 +37,8 @@
       "Songkick",
       "Bandsintown",
       "Christchurch City Council",
-      "ChristchurchNZ"
+      "ChristchurchNZ",
+      "Eventbrite"
     ],
     "festivals_to_recheck": [
       "Kōwhai Grove 2027 — lineup not yet announced",
@@ -57,8 +60,10 @@
       "source_url": "https://ra.co/events/2541366",
       "new_this_week": false,
       "changed_this_week": false,
-      "change_note": "Resident Advisor currently lists $9.99–$29.99 pricing; Humanitix has also been showing final-release pricing.",
-      "change_significance": "minor"
+      "change_note": null,
+      "status_date": null,
+      "change_significance": null,
+      "radar_note": "Routine ticket-price differences between platforms are not treated as an update."
     },
     {
       "id": "2026-11-06-turno",
@@ -73,7 +78,10 @@
       "ticket_label": "Audiology Touring",
       "source_url": "https://www.audiologytouring.com/events/turno-uk-christchurch",
       "new_this_week": false,
-      "changed_this_week": false
+      "changed_this_week": false,
+      "status_date": null,
+      "change_significance": null,
+      "change_note": null
     },
     {
       "id": "2026-11-07-eigen",
@@ -88,7 +96,29 @@
       "ticket_label": "Humanitix",
       "source_url": "https://events.humanitix.com/eigen-or-christchurch",
       "new_this_week": false,
-      "changed_this_week": false
+      "changed_this_week": false,
+      "status_date": null,
+      "change_significance": null,
+      "change_note": null
+    },
+    {
+      "id": "2026-11-07-machina-dnb",
+      "date": "2026-11-07",
+      "time": "22:00–02:00",
+      "name": "MACHINA DNB",
+      "venue": "Muy Muy, 44 Welles Street",
+      "category": "dnb",
+      "artists": "4 DJs · names TBA",
+      "age_restriction": "18+",
+      "ticket_url": "https://www.eventbrite.co.nz/e/machina-dnb-tickets-2003443550591",
+      "ticket_label": "Eventbrite / South Media Entertainment",
+      "source_url": "https://www.eventbrite.co.nz/e/machina-dnb-tickets-2003443550591",
+      "new_this_week": true,
+      "changed_this_week": false,
+      "status_date": "2026-10-29",
+      "change_significance": null,
+      "change_note": null,
+      "radar_note": "South Media Entertainment event; four DJs are advertised, but their names are not published in the listing."
     },
     {
       "id": "2026-11-07-roll-the-beats",
@@ -103,8 +133,11 @@
       "ticket_label": "Event listing / Frontline Collective",
       "source_url": "https://stayhappening.com/e/roll-the-beats-november-edition-E2ISYYTT50Q",
       "new_this_week": true,
-      "change_note": "Newly discovered this scan; explicitly advertises D&B alongside house, UKG, 140 and hard-gabber.",
-      "status_date": "2026-10-25"
+      "change_note": null,
+      "changed_this_week": false,
+      "status_date": "2026-10-25",
+      "change_significance": null,
+      "radar_note": "explicitly advertises D&B alongside house, UKG, 140 and hard-gabber."
     },
     {
       "id": "2026-11-12-silva-bumpa",
@@ -119,7 +152,10 @@
       "ticket_label": "Tixr / Cream Events",
       "source_url": "https://www.tixr.com/groups/creamevents/events/silva-bumpa-christchurch-204025",
       "new_this_week": false,
-      "changed_this_week": false
+      "changed_this_week": false,
+      "status_date": null,
+      "change_significance": null,
+      "change_note": null
     },
     {
       "id": "2026-11-13-truth",
@@ -134,7 +170,10 @@
       "ticket_label": "UnderTheRadar",
       "source_url": "https://www.undertheradar.co.nz/gig/105056/Deep-Dark-And-Dangerous-Presents-TRUTH.utr",
       "new_this_week": false,
-      "changed_this_week": false
+      "changed_this_week": false,
+      "status_date": null,
+      "change_significance": null,
+      "change_note": null
     },
     {
       "id": "2026-11-14-rents-due",
@@ -149,8 +188,11 @@
       "ticket_label": "Humanitix",
       "source_url": "https://events.humanitix.com/rent-s-due-te-wa-the-space-fundraiser",
       "new_this_week": true,
-      "change_note": "Newly discovered this scan; community fundraiser/rave.",
-      "status_date": "2026-10-25"
+      "change_note": null,
+      "changed_this_week": false,
+      "status_date": "2026-10-25",
+      "change_significance": null,
+      "radar_note": "community fundraiser/rave."
     },
     {
       "id": "2026-11-20-my-home-is-the-rave",
@@ -165,7 +207,10 @@
       "ticket_label": "Rova / Audiology",
       "source_url": "https://www.rova.nz/events/my-home-is-the-rave",
       "new_this_week": false,
-      "changed_this_week": false
+      "changed_this_week": false,
+      "status_date": null,
+      "change_significance": null,
+      "change_note": null
     },
     {
       "id": "2026-11-20-submarine-strategy-deep-tempo",
@@ -180,7 +225,10 @@
       "ticket_label": "Southern Shakedown event listing",
       "source_url": "https://stayhappening.com/e/submarine-strategy-deep-tempo-%E2ISYX65G1Y",
       "new_this_week": false,
-      "changed_this_week": false
+      "changed_this_week": false,
+      "status_date": null,
+      "change_significance": null,
+      "change_note": null
     },
     {
       "id": "2026-11-21-marcellus-pittman",
@@ -195,13 +243,15 @@
       "ticket_label": "Music First",
       "source_url": "https://tickets.keepthemusicfirst.com/events/musicfirst",
       "new_this_week": true,
-      "change_note": "Newly discovered this scan; Music First confirms the Christchurch date.",
-      "status_date": "2026-10-25"
+      "change_note": null,
+      "changed_this_week": false,
+      "status_date": "2026-10-25",
+      "change_significance": null
     },
     {
       "id": "2026-11-26-three-cities",
       "date": "2026-11-26",
-      "time": "20:00–02:00",
+      "time": "20:00–00:00",
       "name": "3 Cities, 3 Nights — CHC",
       "venue": "The Loons, Lyttelton",
       "category": "bass",
@@ -211,8 +261,11 @@
       "ticket_label": "Humanitix",
       "source_url": "https://events.humanitix.com/copy-of-3-cities-3-nights-chc",
       "new_this_week": true,
-      "change_note": "Newly captured; Resident Advisor classifies the tour as Bass.",
-      "status_date": "2026-10-25"
+      "change_note": null,
+      "changed_this_week": false,
+      "status_date": "2026-10-25",
+      "change_significance": null,
+      "radar_note": "Resident Advisor classifies the tour as Bass."
     },
     {
       "id": "2026-11-28-rushing-back-audent",
@@ -227,8 +280,11 @@
       "ticket_label": "Humanitix",
       "source_url": "https://events.humanitix.com/rushing-back-tour-audent",
       "new_this_week": true,
-      "change_note": "Newly captured; included as bass-adjacent only because the event is techno/trance-led.",
-      "status_date": "2026-10-25"
+      "change_note": null,
+      "changed_this_week": false,
+      "status_date": "2026-10-25",
+      "change_significance": null,
+      "radar_note": "included as bass-adjacent only because the event is techno/trance-led."
     },
     {
       "id": "2026-12-04-nomad",
@@ -243,8 +299,11 @@
       "ticket_label": "Cosmic Ticketing",
       "source_url": "https://www.cosmicticketing.co.nz/event/7183",
       "new_this_week": true,
-      "change_note": "Newly captured; explicitly spans bass, dub, reggae, jungle and Drum & Bass.",
-      "status_date": "2026-10-25"
+      "change_note": null,
+      "changed_this_week": false,
+      "status_date": "2026-10-25",
+      "change_significance": null,
+      "radar_note": "explicitly spans bass, dub, reggae, jungle and Drum & Bass."
     },
     {
       "id": "2026-12-05-sorchalula",
@@ -259,8 +318,11 @@
       "ticket_label": "Humanitix",
       "source_url": "https://www.undertheradar.co.nz/gig/105377/Sorchalula---Why-So-Far-EP-Release.utr",
       "new_this_week": true,
-      "change_note": "Newly captured; UnderTheRadar describes SorchaLula's sound as bass-driven.",
-      "status_date": "2026-10-25"
+      "change_note": null,
+      "changed_this_week": false,
+      "status_date": "2026-10-25",
+      "change_significance": null,
+      "radar_note": "UnderTheRadar describes SorchaLula's sound as bass-driven."
     },
     {
       "id": "2026-12-12-dub-master",
@@ -275,8 +337,11 @@
       "ticket_label": "Cosmic Ticketing / door sales",
       "source_url": "https://wunderbar.co.nz/whats-on/",
       "new_this_week": true,
-      "change_note": "Newly captured; explicitly spans dub, dancehall, dubstep and jungle.",
-      "status_date": "2026-10-25"
+      "change_note": null,
+      "changed_this_week": false,
+      "status_date": "2026-10-25",
+      "change_significance": null,
+      "radar_note": "explicitly spans dub, dancehall, dubstep and jungle."
     },
     {
       "id": "2026-12-28-lakes",
@@ -291,7 +356,10 @@
       "ticket_label": "Ticketmaster",
       "source_url": "https://www.christchurchnz.com/visit/whats-on/listing/lakes-festival-2026-15190",
       "new_this_week": false,
-      "changed_this_week": false
+      "changed_this_week": false,
+      "status_date": null,
+      "change_significance": null,
+      "change_note": null
     },
     {
       "id": "2026-12-29-rolling-meadows",
@@ -306,7 +374,10 @@
       "ticket_label": "Rolling Meadows / Flicket",
       "source_url": "https://rollingmeadows.co.nz/",
       "new_this_week": false,
-      "changed_this_week": false
+      "changed_this_week": false,
+      "status_date": null,
+      "change_significance": null,
+      "change_note": null
     },
     {
       "id": "2027-02-26-electric-avenue",
@@ -321,10 +392,11 @@
       "ticket_label": "Ticketmaster",
       "source_url": "https://www.rova.nz/events/electric-avenue-2027",
       "new_this_week": false,
-      "changed_this_week": true,
-      "change_note": "Official festival sources confirm the D&B contingent; event is sold out.",
-      "change_significance": "significant",
-      "status_date": "2026-10-25"
+      "changed_this_week": false,
+      "change_note": null,
+      "status_date": null,
+      "change_significance": null,
+      "radar_note": "Official festival ticketing currently states sold out; Ticketmaster also lists current ticket/resale pages, but no new primary inventory release was verified in this scan."
     },
     {
       "id": "2027-04-09-sub-focus",
@@ -339,8 +411,10 @@
       "ticket_label": "Rova / Audiology / George FM",
       "source_url": "https://www.subfocus.com/live/",
       "new_this_week": true,
-      "change_note": "Newly announced; presale and general sale began 21 October 2026.",
-      "status_date": "2026-10-25"
+      "change_note": null,
+      "changed_this_week": false,
+      "status_date": "2026-10-25",
+      "change_significance": null
     }
   ]
 }
