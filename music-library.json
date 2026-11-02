@@ -7,13 +7,23 @@
       "volumes": [
         {
           "number": 1,
-          "url": "https://drive.google.com/file/d/1AFL9JylT4bJHjoc9Wzvasx9Ig2BulSlL/view?usp=drive_link",
-          "tagline": "Grafix pres | 30min | 2026-07"
+          "tagline": "Grafix pres | 30min | 2026-07",
+          "links": [
+            {
+              "platform": "google-drive",
+              "url": "https://drive.google.com/file/d/1AFL9JylT4bJHjoc9Wzvasx9Ig2BulSlL/view?usp=drive_link"
+            }
+          ]
         },
         {
           "number": 2,
-          "url": "https://drive.google.com/file/d/1JR4lADF936HwxsDMk6sOV2NP5CdBD6-o/view?usp=drive_link",
-          "tagline": "Pola & Bryson pres | 30min | 2026-09"
+          "tagline": "Pola & Bryson pres | 30min | 2026-09",
+          "links": [
+            {
+              "platform": "google-drive",
+              "url": "https://drive.google.com/file/d/1JR4lADF936HwxsDMk6sOV2NP5CdBD6-o/view?usp=drive_link"
+            }
+          ]
         }
       ]
     },
@@ -22,13 +32,27 @@
       "volumes": [
         {
           "number": 1,
-          "url": "https://drive.google.com/file/d/1NFYEg4ObIiMjhicIDUBSXvN6OtVGJ_gT/view?usp=drive_link",
-          "tagline": "moody mix | 60min | 2026-05"
+          "tagline": "moody mix | 60min | 2026-05",
+          "links": [
+            {
+              "platform": "google-drive",
+              "url": "https://drive.google.com/file/d/1NFYEg4ObIiMjhicIDUBSXvN6OtVGJ_gT/view?usp=drive_link"
+            }
+          ]
         },
         {
           "number": 2,
-          "url": "https://drive.google.com/file/d/1Xq9dYdxTkP0MM8OQanezFZyX4vRJASEp/view?usp=drive_link",
-          "tagline": "HBAD 2026 | 30min | 2026-10"
+          "tagline": "HBAD 2026 | 30min | 2026-10",
+          "links": [
+            {
+              "platform": "google-drive",
+              "url": "https://drive.google.com/file/d/1Xq9dYdxTkP0MM8OQanezFZyX4vRJASEp/view?usp=drive_link"
+            },
+            {
+              "platform": "youtube",
+              "url": "https://youtu.be/UYxxMk_4okQ?si=QKBOEjj-CWucvu5w"
+            }
+          ]
         }
       ]
     },
@@ -37,13 +61,23 @@
       "volumes": [
         {
           "number": 1,
-          "url": "https://drive.google.com/file/d/16nXc8gxNC60-m_TtbmdO0mmUr45RZTa8/view?usp=sharing",
-          "tagline": "Minimal Roller Mix (Amoss artist tribute) | 60min | 2025-08"
+          "tagline": "Minimal Roller Mix (Amoss artist tribute) | 60min | 2025-08",
+          "links": [
+            {
+              "platform": "google-drive",
+              "url": "https://drive.google.com/file/d/16nXc8gxNC60-m_TtbmdO0mmUr45RZTa8/view?usp=sharing"
+            }
+          ]
         },
         {
           "number": 2,
-          "url": "https://drive.google.com/file/d/1s1f_oM1zp3IaawQY8kacmWTdCnW4X5NY/view?usp=drive_link",
-          "tagline": "Murk Mix | 37min | 2026-02"
+          "tagline": "Murk Mix | 37min | 2026-02",
+          "links": [
+            {
+              "platform": "google-drive",
+              "url": "https://drive.google.com/file/d/1s1f_oM1zp3IaawQY8kacmWTdCnW4X5NY/view?usp=drive_link"
+            }
+          ]
         }
       ]
     },
