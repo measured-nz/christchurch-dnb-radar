@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-11-12",
+  "last_checked": "2026-11-13",
   "source_watchlist": {
     "promoters": [
       "Southern Shakedown",
@@ -56,45 +56,6 @@
     ]
   },
   "events": [
-    {
-      "id": "2026-11-12-silva-bumpa",
-      "date": "2026-11-12",
-      "time": "17:30–22:30",
-      "name": "Silva Bumpa (UK)",
-      "venue": "Addington Raceway / Addington Events Centre",
-      "category": "bass",
-      "artists": "Silva Bumpa · local support TBA",
-      "age_restriction": "R18",
-      "ticket_url": "https://www.tixr.com/groups/creamevents/events/silva-bumpa-christchurch-204025",
-      "ticket_label": "Tixr / Cream Events (waitlist currently shown)",
-      "source_url": "https://www.creamevents.co.nz/",
-      "new_this_week": false,
-      "changed_this_week": false,
-      "status_date": null,
-      "change_significance": null,
-      "change_note": null,
-      "availability_note": "Cream Events' current official events page directs visitors to a waitlist. The page does not explicitly label the event sold out, and the date of the status change could not be verified."
-    },
-    {
-      "id": "2026-11-12-waxx-off",
-      "date": "2026-11-12",
-      "time": "22:30–02:00",
-      "name": "WAXX OFF | Christchurch",
-      "venue": "Sydenham Underpass, 91 Orbell Street",
-      "category": "bass",
-      "artists": "WAXX OFF · SUEDE · DJ Special Guest (TBA)",
-      "age_restriction": "TBA",
-      "ticket_url": "https://stayhappening.com/e/waxx-off-christchurch-E2IT02LMKYO",
-      "ticket_label": "StayHappening / Cream",
-      "source_url": "https://stayhappening.com/e/waxx-off-christchurch-E2IT02LMKYO",
-      "promoter": "Cream Events",
-      "new_this_week": true,
-      "changed_this_week": false,
-      "status_date": "2026-11-12",
-      "change_significance": null,
-      "change_note": null,
-      "radar_note": "Garage-driven rave and bassline event; listing advertises rolling basslines."
-    },
     {
       "id": "2026-11-13-truth",
       "date": "2026-11-13",
@@ -368,15 +329,15 @@
       "category": "festival",
       "artists": "Wilkinson · Hybrid Minds · K Motionz · plus major festival lineup",
       "age_restriction": "R18",
-      "ticket_url": "https://www.ticketmaster.co.nz/electric-avenue-music-festival-2027-weekend-pass-christchurch-central-city-26-02-2027/event/240064779D3B218E",
-      "ticket_label": "Ticketmaster",
+      "ticket_url": "https://www.ticketmaster.co.nz/electric-avenue-music-festival-2027-locals-christchurch-central-city-26-02-2027/event/2400655398352C7B",
+      "ticket_label": "Ticketmaster — Local's Weekend Pass",
       "source_url": "https://www.rova.nz/events/electric-avenue-2027",
       "new_this_week": false,
-      "changed_this_week": false,
-      "change_note": null,
-      "status_date": null,
-      "change_significance": null,
-      "availability_note": "The original allocations are sold out. Organisers have announced 4,000 additional tickets exclusively for Greater Christchurch residents; the sale date and eligibility details are still to be announced."
+      "changed_this_week": true,
+      "change_note": "The additional Greater Christchurch local-ticket allocation has gone on sale. Ticketmaster lists a Local's Weekend Pass with sales starting Wednesday 11 November at 12:00pm NZDT.",
+      "status_date": "2026-11-13",
+      "change_significance": "significant",
+      "availability_note": "The additional local allocation went on sale 11 November at noon NZDT. Ticketmaster lists a Local's Weekend Pass; local eligibility applies and the pass is non-transferable and non-refundable. Ticketmaster's event listings also show low availability for the Friday and Saturday single-day passes."
     },
     {
       "id": "2027-03-11-twominds",
@@ -392,11 +353,11 @@
       "source_url": "https://www.twomindsfestival.co.nz/",
       "new_this_week": false,
       "changed_this_week": true,
-      "status_date": "2026-11-12",
+      "status_date": "2026-11-13",
       "change_significance": "significant",
-      "change_note": "The 2027 lineup has been revealed, including HAAi B2B DJ Boring, Main Phase, Mungo's Hi Fi, Charlie P, L.A.B, The Black Seeds, Dallas Tamaira and Troy Kingi.",
+      "change_note": "The lineup was revealed and general ticket sales opened on 11 November. The official festival site now reports one-third of live capacity gone in 24 hours.",
       "radar_note": "The announced programme includes UK garage act Main Phase and dub/sound-system act Mungo's Hi Fi, alongside major New Zealand artists.",
-      "ticket_availability_note": "Presale registration is open; presale ends Thursday 12 November 2026 at 6:00pm NZDT."
+      "ticket_availability_note": "General ticket sales are open. The official site reports one-third of live capacity sold within 24 hours (checked 13 November 2026)."
     },
     {
       "id": "2027-04-09-sub-focus",
