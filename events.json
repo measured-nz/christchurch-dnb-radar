@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-11-13",
+  "last_checked": "2026-11-19",
   "source_watchlist": {
     "promoters": [
       "Southern Shakedown",
@@ -17,7 +17,9 @@
       "Totally Chonkers Collective",
       "Fantasia Events",
       "Corner Store Enterprises",
-      "103 Soundsystem"
+      "103 Soundsystem",
+      "Strange Behaviour",
+      "Beat & Path"
     ],
     "venues": [
       "The Assembly",
@@ -48,7 +50,9 @@
       "ChristchurchNZ",
       "Eventbrite",
       "Noda",
-      "Eventfinda"
+      "Eventfinda",
+      "StayHappening",
+      "Rova"
     ],
     "festivals_to_recheck": [
       "Kōwhai Grove 2027 — 15–17 Jan, Gunns Bush; lineup not yet announced; confirm bass/D&B acts before adding to event list",
@@ -56,62 +60,6 @@
     ]
   },
   "events": [
-    {
-      "id": "2026-11-13-truth",
-      "date": "2026-11-13",
-      "time": "21:00–late",
-      "name": "Deep, Dark & Dangerous presents TRUTH",
-      "venue": "Sydenham Underpass",
-      "category": "bass",
-      "artists": "TRUTH (extended 2-hour set) · Boasteeze B2B Texture · Oren-G · Psymatic Sound Crew (Jak · Lamb · Syntrude)",
-      "age_restriction": "R18",
-      "ticket_url": "https://www.undertheradar.co.nz/gig/105056/Deep-Dark-And-Dangerous-Presents-TRUTH.utr",
-      "ticket_label": "UnderTheRadar",
-      "source_url": "https://www.undertheradar.co.nz/gig/105056/Deep-Dark-And-Dangerous-Presents-TRUTH.utr",
-      "new_this_week": false,
-      "changed_this_week": false,
-      "status_date": null,
-      "change_significance": null,
-      "change_note": null
-    },
-    {
-      "id": "2026-11-14-shift-double-dozen",
-      "date": "2026-11-14",
-      "time": "21:00–02:00",
-      "name": "SHIFT — Double Dozen",
-      "venue": "The Mud Bar & Restro, 174 St Asaph Street",
-      "category": "bass",
-      "artists": "3 Phase · Baker · Big Dibbs · Blak · Briggs · C-M-J · FZA · GHO$T · Haho · Downtown · Hame Dolla · Havoc · Jaket · JayC · Lil Dibbs · Nebula · Nickingliss · Nozzy · Palace · Rekon · RTB Winner · S-Geo · Slim · Vitam",
-      "age_restriction": "TBA",
-      "ticket_url": "https://www.eventfinda.co.nz/2026/shift-double-dozen/christchurch",
-      "ticket_label": "Eventfinda / SHIFT",
-      "source_url": "https://noda.co.nz/christchurch/events/shift-double-dozen-766feb213c71",
-      "new_this_week": false,
-      "changed_this_week": false,
-      "status_date": null,
-      "change_significance": null,
-      "change_note": null,
-      "radar_note": "Explicitly spans jump-up, neuro, liquid, dancefloor, jungle, rollers, UKG, dubstep and other bass-led styles."
-    },
-    {
-      "id": "2026-11-14-totally-chonkers",
-      "date": "2026-11-14",
-      "time": "21:00–02:00",
-      "name": "Totally Chonkers — Galaxy Bar CHCH",
-      "venue": "Galaxy Arcade, 206 Barbadoes Street",
-      "category": "dnb",
-      "artists": "Spacella · Clikd · Elusiv · Niltrace",
-      "age_restriction": "TBA",
-      "ticket_url": "",
-      "ticket_label": "Event listing / Totally Chonkers Collective",
-      "source_url": "https://happeningnext.com/event/totally-chonkers-galaxy-bar-chch-14-11-2026-eid3a0e8cwp2p",
-      "new_this_week": false,
-      "changed_this_week": false,
-      "status_date": null,
-      "change_significance": null,
-      "change_note": null,
-      "radar_note": "Christchurch debut explicitly advertised as heavyweight Drum & Bass with big basslines."
-    },
     {
       "id": "2026-11-20-my-home-is-the-rave",
       "date": "2026-11-20",
@@ -153,7 +101,7 @@
       "date": "2026-11-26",
       "time": "20:00–02:00",
       "name": "3 Cities, 3 Nights — CHC",
-      "venue": "The Loons, Lyttelton",
+      "venue": "The Loons, 16 Canterbury Street, Lyttelton",
       "category": "bass",
       "artists": "Tom Cosm · Nourish · Sanoi · Antix · vinyl-only support MarkJ",
       "age_restriction": "TBA",
@@ -165,14 +113,16 @@
       "changed_this_week": false,
       "status_date": null,
       "change_significance": null,
-      "radar_note": "Resident Advisor classifies the tour as Bass."
+      "radar_note": "Resident Advisor classifies the tour as Bass.",
+      "promoter": "Beat & Path",
+      "availability_note": "Early Shirley allocation sold out; GA tickets remain available at $50 + booking fee."
     },
     {
       "id": "2026-12-04-nomad",
       "date": "2026-12-04",
-      "time": "20:00–late",
+      "time": "20:00–01:00",
       "name": "The Nomad — ReGenerate NZ Tour Christchurch",
-      "venue": "The Loons, Lyttelton",
+      "venue": "The Loons, 16 Canterbury Street, Lyttelton",
       "category": "bass",
       "artists": "The Nomad · MC Antsman · Deep Fried Dub · Dub Styles B2B Rosa · O.G Primate",
       "age_restriction": "TBA",
@@ -184,7 +134,8 @@
       "changed_this_week": false,
       "status_date": null,
       "change_significance": null,
-      "radar_note": "explicitly spans bass, dub, reggae, jungle and Drum & Bass."
+      "radar_note": "explicitly spans bass, dub, reggae, jungle and Drum & Bass.",
+      "availability_note": "Cosmic Ticketing lists the event from 8:00pm to 1:00am."
     },
     {
       "id": "2026-12-04-strange-behaviour",
@@ -272,32 +223,34 @@
       "category": "festival",
       "artists": "Netsky · Break · DJ Zinc · Lens · Oppidan · ROVA · Armand Van Helden · Mall Grab · X CLUB. · Dean Turnley · Ladi6 · Sin & Brook · plus local artists",
       "age_restriction": "R18",
-      "ticket_url": "https://www.ticketmaster.co.nz/lakes-music-festival-tickets/artist/4358984",
-      "ticket_label": "Ticketmaster",
-      "source_url": "https://www.christchurchnz.com/visit/whats-on/listing/lakes-festival-2026-15190",
+      "ticket_url": "https://www.moshtix.co.nz/v2/event/lakes-festival-2026/191528",
+      "ticket_label": "Moshtix",
+      "source_url": "https://www.rova.nz/events/lakes-festival-2026",
       "new_this_week": false,
       "changed_this_week": false,
       "status_date": null,
       "change_significance": null,
-      "change_note": null
+      "change_note": null,
+      "availability_note": "First, second, third and fourth general-admission releases are exhausted; final release tickets are currently listed. Ticket availability may change."
     },
     {
       "id": "2026-12-29-rolling-meadows",
       "date": "2026-12-29",
-      "time": "Multi-day; gates 12:00 on 29 Dec and 10:00 on 30–31 Dec",
+      "time": "Multi-day; 29–31 December. Gates 12:00 on 29 Dec and 10:00 on 30–31 Dec",
       "name": "Rolling Meadows 2026/27",
-      "venue": "Rolling Meadows, 240 Lower Styx Road, Bottle Lake",
+      "venue": "Rolling Meadows, 240 Lower Styx Road, Bottle Lake, Christchurch",
       "category": "festival",
-      "artists": "Alison Wonderland · Andy C · Culture Shock · Friction · 1991 · Clean Bandit (DJ set) · Example · JME · The Exponents · 4AM Kru · A Little Sound · Andromedik · Arcando · Ivy Lab · Mefjus · Pirapus · State of Mind + MC Crafty · Subsonic · The Upbeats · plus local artists",
+      "artists": "Andy C · Culture Shock · Friction · 1991 · 4AM Kru · A Little Sound · Andromedik · Arcando · Ivy Lab · Mefjus · Pirapus · State of Mind + MC Crafty · Subsonic · The Upbeats · Eigen B2B Versah · Dylano (AV set) · Damage Control · plus local artists",
       "age_restriction": "R18",
-      "ticket_url": "https://rollingmeadows.co.nz/",
-      "ticket_label": "Rolling Meadows / Flicket",
+      "ticket_url": "https://sub180.flicket.co.nz/events/c3f5cec5-464a-48ae-8053-6434a90497db/reservation",
+      "ticket_label": "Flicket / SUB180",
       "source_url": "https://rollingmeadows.co.nz/",
       "new_this_week": false,
       "changed_this_week": false,
       "status_date": null,
       "change_significance": null,
-      "change_note": null
+      "change_note": null,
+      "availability_note": "Early Bird, First Release and Second Release three-day passes are sold out; Third Release is currently on sale. Other day-pass options are listed on Flicket."
     },
     {
       "id": "2027-01-23-charli-brix-euphonic-women-in-the-mix",
@@ -317,7 +270,7 @@
       "status_date": "2026-11-12",
       "change_significance": null,
       "change_note": null,
-      "availability_note": "Early Bird ($19.99) and 2nd Release ($24.99) tickets listed.",
+      "availability_note": "Early Bird allocation sold out; 2nd Release ($24.99) and 3rd Release ($29.99) tickets are currently listed.",
       "radar_note": "Charli Brix's event description cites garage, breaks and drum & bass; all-female local lineup TBA, with Boom Candy Sound System."
     },
     {
@@ -330,14 +283,14 @@
       "artists": "Wilkinson · Hybrid Minds · K Motionz · plus major festival lineup",
       "age_restriction": "R18",
       "ticket_url": "https://www.ticketmaster.co.nz/electric-avenue-music-festival-2027-locals-christchurch-central-city-26-02-2027/event/2400655398352C7B",
-      "ticket_label": "Ticketmaster — Local's Weekend Pass",
+      "ticket_label": "Ticketmaster — Local's Weekend Pass (currently unavailable)",
       "source_url": "https://www.rova.nz/events/electric-avenue-2027",
       "new_this_week": false,
       "changed_this_week": true,
-      "change_note": "The additional Greater Christchurch local-ticket allocation has gone on sale. Ticketmaster lists a Local's Weekend Pass with sales starting Wednesday 11 November at 12:00pm NZDT.",
-      "status_date": "2026-11-13",
+      "change_note": "Ticketmaster now lists the Greater Christchurch Local's Weekend Pass as unavailable. Standard weekend and single-day ticket listings show low availability.",
+      "status_date": "2026-11-19",
       "change_significance": "significant",
-      "availability_note": "The additional local allocation went on sale 11 November at noon NZDT. Ticketmaster lists a Local's Weekend Pass; local eligibility applies and the pass is non-transferable and non-refundable. Ticketmaster's event listings also show low availability for the Friday and Saturday single-day passes."
+      "availability_note": "The Local's Weekend Pass is currently unavailable on Ticketmaster. Ticketmaster's Christchurch listings show low availability for standard weekend and single-day passes; check the official listing for current inventory."
     },
     {
       "id": "2027-03-11-twominds",
@@ -357,7 +310,7 @@
       "change_significance": "significant",
       "change_note": "The lineup was revealed and general ticket sales opened on 11 November. The official festival site now reports one-third of live capacity gone in 24 hours.",
       "radar_note": "The announced programme includes UK garage act Main Phase and dub/sound-system act Mungo's Hi Fi, alongside major New Zealand artists.",
-      "ticket_availability_note": "General ticket sales are open. The official site reports one-third of live capacity sold within 24 hours (checked 13 November 2026)."
+      "ticket_availability_note": "The official festival site continues to report one-third of live capacity gone in 24 hours; general ticket sales are open."
     },
     {
       "id": "2027-04-09-sub-focus",
